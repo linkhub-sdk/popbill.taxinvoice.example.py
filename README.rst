@@ -10,7 +10,6 @@ popbill.taxinvoice.example.py
   * popbill
 
 * install popbill by
- ::
+::
 
-   pip install popbill 
- 
+    $ pip install popbill 
