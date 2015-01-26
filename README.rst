@@ -7,7 +7,7 @@ popbill.taxinvoice.example.py
 * requirements
  
   * Python 2.6+
-  * popbill
+  * popbill [ https://github.com/linkhub-sdk/popbill.py ]
 
 * install popbill by
 ::
