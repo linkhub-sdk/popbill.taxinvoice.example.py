@@ -12,4 +12,13 @@ popbill.taxinvoice.example.py
 * install popbill by
 ::
 
-    $ pip install popbill 
+    $ pip install popbill
+
+* how to test ?
+
+  * modify testValue.py with LinkID/SecretKey issued by Linkhub.
+  * And test with console like...
+
+::
+
+    $ python checkIsMember.py
