@@ -8,3 +8,9 @@ popbill.taxinvoice.example.py
  
   * Python 2.6+
   * popbill
+
+* install popbill by
+ ::
+
+   pip install popbill 
+ 
