@@ -16,7 +16,7 @@ taxinvoiceService.IsTest = testValue.IsTest
 try:
     print("세금계산서 1건 임시저장")
     
-    taxinvoice = Taxinvoice(writeDate = "20150121", #작성일자 yyyyMMdd
+    taxinvoice = Taxinvoice(writeDate = "20150616", #작성일자 yyyyMMdd
                             chargeDirection = "정과금", #과금방향 '정과금' , '역과금' 역발행시에만 '역과금' 기능 사용가능
                             issueType = "정발행", #발행영태 '정발행','역발행','위수탁'
                             purposeType = "영수", # '영수'/'청구'
@@ -25,7 +25,7 @@ try:
                             invoicerCorpNum = testValue.testCorpNum, # 공급자 사업자번호 , '-' 없이 10자리 기재.
                             invoicerTaxRegID = None, # 공급자 종사업자 식별번호, 공급자가 사업자단위과세제도를 운영하여, 이를 세금계산서에 기재하고자 할 경우 국세청에서 부여한 식별번호 4자리 입력.
                             invoicerCorpName = "공급자 상호", 
-                            invoicerMgtKey = "111-2222-3333", #파트너 부여 세금계산서 관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 공급자별 고유번호 생성
+                            invoicerMgtKey = "20150616-22", #파트너 부여 세금계산서 관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 공급자별 고유번호 생성
                             invoicerCEOName = "공급자 대표자 성명",
                             invoicerAddr = "공급자 주소",
                             invoicerBizClass = "공급자 업종",

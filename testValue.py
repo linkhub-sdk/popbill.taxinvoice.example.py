@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 LinkID =  'TESTER'
-SecretKey  =  'Tyt59MzcdINLqbZI4Duz1SWmcsatSyYf1h5WrqqoPtc='
+SecretKey  =  'SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I='
 IsTest = True
-testCorpNum = "1231212312" #테스트 회원 사업자번호
-testUserID = "userid" #테스트 회원 팝빌 아아디
+testCorpNum = "1234567890" #테스트 회원 사업자번호
+testUserID = "testkorea" #테스트 회원 팝빌 아아디

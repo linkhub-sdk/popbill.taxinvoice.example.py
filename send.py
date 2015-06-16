@@ -17,11 +17,12 @@ try:
     print("세금계산서 승인요청")
     
     MgtKeyType = "SELL" #관리번호 유형 , SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
-    MgtKey = "111-2222-3333"
+    MgtKey = "20150616-22"
     Memo = "처리시 메모" #문서이력등에 남는 처리시 메모. 필수 아님.
     UserID = testValue.testUserID
+    EmailSubject = "" # 전송메일 제목, 미기재시 기본제목으로 전송
 
-    result = taxinvoiceService.send(testValue.testCorpNum,MgtKeyType,MgtKey,Memo,UserID)
+    result = taxinvoiceService.send(testValue.testCorpNum,MgtKeyType,MgtKey,Memo,EmailSubject,UserID)
 
     print("처리결과 : [%d] %s" % (result.code,result.message))
 except PopbillException as PE:
