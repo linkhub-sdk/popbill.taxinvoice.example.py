@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -12,10 +12,10 @@ from popbill import TaxinvoiceService,PopbillException
 
 taxinvoiceService =  TaxinvoiceService(testValue.LinkID,testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
-  
+
 try:
     print("세금계산서 발행")
-    
+
     MgtKeyType = "SELL" #관리번호 유형 , SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKey = "111-2222-3333"
     Memo = "처리시 메모" #문서이력등에 남는 처리시 메모. 필수 아님.

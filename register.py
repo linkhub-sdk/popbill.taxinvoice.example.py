@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -12,10 +12,10 @@ from popbill import Taxinvoice,TaxinvoiceDetail,Contact,TaxinvoiceService,Popbil
 
 taxinvoiceService =  TaxinvoiceService(testValue.LinkID,testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
-  
+
 try:
     print("세금계산서 1건 임시저장")
-    
+
     taxinvoice = Taxinvoice(writeDate = "20150616", #작성일자 yyyyMMdd
                             chargeDirection = "정과금", #과금방향 '정과금' , '역과금' 역발행시에만 '역과금' 기능 사용가능
                             issueType = "정발행", #발행영태 '정발행','역발행','위수탁'
@@ -24,7 +24,7 @@ try:
                             taxType = "과세", # '과세'/'영세'/'면세'
                             invoicerCorpNum = testValue.testCorpNum, # 공급자 사업자번호 , '-' 없이 10자리 기재.
                             invoicerTaxRegID = None, # 공급자 종사업자 식별번호, 공급자가 사업자단위과세제도를 운영하여, 이를 세금계산서에 기재하고자 할 경우 국세청에서 부여한 식별번호 4자리 입력.
-                            invoicerCorpName = "공급자 상호", 
+                            invoicerCorpName = "공급자 상호",
                             invoicerMgtKey = "20150616-22", #파트너 부여 세금계산서 관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 공급자별 고유번호 생성
                             invoicerCEOName = "공급자 대표자 성명",
                             invoicerAddr = "공급자 주소",
@@ -53,7 +53,7 @@ try:
                             supplyCostTotal = "100000", # 공급가액 총액
                             taxTotal = "10000", # 세액 총액
                             totalAmount = "110000", # 합계금액, 공급가액 총액 + 세액 총액
-                            
+
                             modifyCode = None, # 수정사유코드 수정세금계산서 작성시에 1~6까지 사유코드를 기재. 수정사유코드기재시에만 수정세금계산서로 처리함.
                             originalTaxinvoiceKey = None, # 수정세금계산서 작성시에 원본 세금계산서의 ItemKey를 기재, ItemKey 는 getInfo()를 통해 확인.
                             serialNum = '123', # 기재상 일련번호
@@ -81,20 +81,20 @@ try:
                                                  supplyCost = '100000', # 공급가액
                                                  tax = '10000', # 세액
                                                  remark = '품목비고' #비고
-                                                 ), 
+                                                 ),
                                 TaxinvoiceDetail(serialNum = 2,
                                                  itemName = "품목2")
                             ]
     # 세금계산서 공급받는자 추가 담당자 설정. invoiceeEmail1 이외에 추가메일을 수신하고자 하는 담당자를 기재, 최대 5까지 기재 가능.
     taxinvoice.addContactList = [
-                                    Contact(serialNum = 1, 
+                                    Contact(serialNum = 1,
                                             contactName='추가담당자 성명',
                                             email='test1@test.com'),
                                     Contact(serialNum = 2,
                                             contactName='추가담당자2',
                                             email='test2@test.com')
                                 ]
-    
+
     writeSpecification = False
     UserID = testValue.testUserID
 
