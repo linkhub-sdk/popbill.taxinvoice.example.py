@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -8,20 +8,34 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import TaxinvoiceService,PopbillException
+from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
-  
+
+'''
+세금계산서 발행 안내메일을 재전송합니다.
+'''
+
 try:
-    print("세금계산서 안내메일 재전송")
-    
-    MgtKeyType = "SELL" #관리번호 유형 , 세금계산서 국세청 즉시전송는 "SELL"/"TRUSTEE"중에서 입력.
-    MgtKey = "111-2222-3333"
+    print("=" * 15 + " 발행안내메일 재전송 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
+    MgtKeyType = "SELL"
+
+    # 문서관리번호
+    MgtKey = "20161118-03"
+
+    # 수신메일주소
     ReceiverMail = "test@test.com"
+
+    # 팝빌회원 아이디
     UserID = testValue.testUserID
 
-    result = taxinvoiceService.sendEmail(testValue.testCorpNum,MgtKeyType,MgtKey,ReceiverMail,UserID)
+    result = taxinvoiceService.sendEmail(CorpNum, MgtKeyType, MgtKey, ReceiverMail, UserID)
 
     print("처리결과 : [%d] %s" % (result.code,result.message))
 except PopbillException as PE:

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -8,23 +8,44 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import TaxinvoiceService,PopbillException
+from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
-  
+
+'''
+알림문자를 전송합니다. (단문/SMS- 한글 최대 45자)
+- 알림문자 전송시 포인트가 차감됩니다. (전송실패시 환불처리)
+- 전송내역 확인은 "팝빌 로그인" > [문자 팩스] > [전송내역] 탭에서 전송결과를 확인할 수 있습니다.
+'''
+
 try:
-    print("세금계산서 안내문자 재전송")
-    
-    MgtKeyType = "SELL" #관리번호 유형 , 세금계산서 국세청 즉시전송는 "SELL"/"TRUSTEE"중에서 입력.
-    MgtKey = "111-2222-3333"
-    Sender = "070-7510-6766" #발신번호
-    Receiver = "111-2222-3333" #수신번호
-    Contents = "발신문자 내용" # 최대 90bytes.
+    print("=" * 15 + " 알림문자 전송 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
+    MgtKeyType = "SELL"
+
+    # 문서관리번호
+    MgtKey = "20161118-03"
+
+    # 발신번호
+    Sender = "070-4304-2991"
+
+    # 수신번호
+    Receiver = "010-111-222"
+
+    # 메시지 내용, 최대 90byte 초과시 길이가 조정되어 전송됨
+    Contents = "발신문자 내용"
+
+    # 팝빌회원 아이디
     UserID = testValue.testUserID
 
-    result = taxinvoiceService.sendSMS(testValue.testCorpNum,MgtKeyType,MgtKey,Sender,Receiver,Contents,UserID)
+    result = taxinvoiceService.sendSMS(CorpNum, MgtKeyType, MgtKey, Sender, Receiver, Contents, UserID)
 
-    print("처리결과 : [%d] %s" % (result.code,result.message))
+    print("처리결과 : [%d] %s" % (result.code, result.message))
+
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

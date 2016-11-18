@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -8,57 +8,33 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import TaxinvoiceService,PopbillException
+from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
-  
+
+'''
+1건의 세금계산서 상태/요약 정보를 확인합니다.
+- 세금계산서 상태정보(GetInfo API) 응답항목에 대한 자세한 정보는 "[전자세금계산서 API 연동매뉴얼]
+  > 4.2. (세금)계산서 상태정보 구성" 을 참조하시기 바랍니다.
+'''
+
 try:
-    print("세금계산서 상태 정보 확인")
-    
-    MgtKeyType = "SELL" #관리번호 유형 , SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
-    MgtKey = "111-2222-3333"
- 
-    taxinvoiceInfo = taxinvoiceService.getInfo(testValue.testCorpNum,MgtKeyType,MgtKey)
+    print("=" * 15 + " 세금계산서 상태/요약 정보 확인 " + "=" * 15)
 
-    ''' TaxinvoiceInfo 구성 : 항목별 자세한 내용은 매뉴얼 참조.
-            itemKey                 
-            stateCode               
-            taxType                 
-            purposeType             
-            modifyCode              
-            issueType               
-            writeDate               
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
 
-            invoicerCorpName        
-            invoicerCorpNum         
-            invoicerMgtKey          
-            invoiceeCorpName        
-            invoiceeCorpNum         
-            invoiceeMgtKey          
-            trusteeCorpName         
-            trusteeCorpNum          
-            trusteeMgtKey           
+    # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
+    MgtKeyType = "SELL"
 
-            supplyCostTotal         
-            taxTotal                
+    # 문서관리번호
+    MgtKey = "20161116-01"
 
-            issueDT                 
-            preIssueDT              
-            stateDT                 
-            openYN                  
-            openDT                  
+    taxinvoiceInfo = taxinvoiceService.getInfo(CorpNum, MgtKeyType, MgtKey)
 
-            ntsresult               
-            ntsconfirmNum           
-            ntssendDT               
-            ntsresultDT             
-            ntssendErrCode          
-            stateMemo               
-
-            regDT  
-    '''
-    #상태정보를 표시하기 위해 임의로 작성한 코드. 실재 변수처리시에는 taxinvoiceInfo.stateCode, taxinvoiceInfo.openYN등으로 처리가능
+    # 상태정보를 표시하기 위해 임의로 작성한 코드.
+    # 실제 변수처리시에는 taxinvoiceInfo.stateCode, taxinvoiceInfo.openYN등으로 처리가능
     for key, value in taxinvoiceInfo.__dict__.items():
         if not key.startswith("__"):
             print("%s : %s" % (key,value))

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -8,18 +8,35 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import TaxinvoiceService,PopbillException
+from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
-  
+
+'''
+다수건의 전자세금계산서 인쇄팝업 URL을 반환합니다. (최대 100건)
+- 반환된 URL은 보안정책에 따라 30초의 유효시간을 갖습니다.
+'''
+
 try:
-    print("세금계산서 다량 인쇄 URL")
-    MgtKeyType = "SELL" #관리번호 유형 , 세금계산서 국세청 즉시전송는 "SELL"/"TRUSTEE"중에서 입력.
-    MgtKeyList = ["111-2222-3333","1234","1234567890"]
+    print("=" * 15 + " 세금계산서 인쇄 팝업 URL (대량) " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
+    MgtKeyType = "SELL"
+
+    # 인쇄할 문서관리번호 배열, 최대 100건
+    MgtKeyList = []
+    MgtKeyList.append("20161117-01")
+    MgtKeyList.append("20161117-02")
+    MgtKeyList.append("20161117-03")
+
+    # 팝빌회원 아이디
     UserID = testValue.testUserID
 
-    url = taxinvoiceService.getMassPrintURL(testValue.testCorpNum,MgtKeyType,MgtKeyList,UserID)
+    url = taxinvoiceService.getMassPrintURL(CorpNum, MgtKeyType, MgtKeyList, UserID)
     print("URL: %s" % url)
 
 except PopbillException as PE:

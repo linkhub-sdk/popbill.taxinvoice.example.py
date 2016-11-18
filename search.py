@@ -8,13 +8,26 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import TaxinvoiceService,PopbillException
+from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
+
+'''
+검색조건을 사용하여 세금계산서 목록을 조회합니다.
+- 응답항목에 대한 자세한 사항은 "[전자세금계산서 API 연동매뉴얼] > 4.2. (세금)계산서 상태정보 구성"
+  을 참조하시기 바랍니다.
+'''
 
 try:
     print("=" * 15 + " 세금계산서 목록 조회 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
 
     # 세금계산서 유형 SELL-매출, BUY-매입, TRUSTEE-위수탁
     MgtKeyType = "SELL"
@@ -23,10 +36,10 @@ try:
     DType = "W"
 
     # 시작일자, 표시형식(yyyyMMdd)
-    SDate = "20160701"
+    SDate = "20161001"
 
     # 종료일자, 표시형식(yyyyMMdd)
-    EDate = "20160831"
+    EDate = "20161131"
 
     # 세금계산서 상태코드 배열, 2,3번째 자리에 와일드카드(*) 사용가능
     State = ["3**", "6**"]
@@ -61,9 +74,9 @@ try:
     # 거래처 정보, 거래처 상호 또는 사업자등록번호 기재, 공백처리시 전체조회
     QString = ""
 
-    response = taxinvoiceService.search(testValue.testCorpNum, MgtKeyType, DType, SDate, EDate, State, Type,
-                                    TaxType, LateOnly, TaxRegIDYN, TaxRegIDType, TaxRegID, Page, PerPage,
-                                    Order, testValue.testUserID, QString)
+    response = taxinvoiceService.search(CorpNum, MgtKeyType, DType,
+                SDate, EDate, State, Type, TaxType, LateOnly, TaxRegIDYN,
+                TaxRegIDType, TaxRegID, Page, PerPage, Order, UserID, QString)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
@@ -78,7 +91,7 @@ try:
         for key, value in info.__dict__.items():
             print("%s : %s" % (key, value))
         i += 1
-        print()
+        print
 
 
 except PopbillException as PE:

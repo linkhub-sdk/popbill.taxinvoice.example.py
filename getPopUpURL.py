@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -8,18 +8,33 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import TaxinvoiceService,PopbillException
+from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
-  
+
+'''
+1건의 전자세금계산서 보기 팝업 URL을 반환합니다.
+- 보안정책으로 인해 반환된 URL의 유효시간은 30초입니다.
+'''
+
 try:
-    print("세금계산서 팝업 URL")
-    MgtKeyType = "SELL" #관리번호 유형 , 세금계산서 국세청 즉시전송는 "SELL"/"TRUSTEE"중에서 입력.
-    MgtKey = "111-2222-3333"
+    print("=" * 15 + " 세금계산서 보기 팝업 URL 확인 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
+    MgtKeyType = "SELL"
+
+    # 문서관리번호
+    MgtKey = "20161117-01"
+
+    # 팝빌회원 아이디
     UserID = testValue.testUserID
 
-    url = taxinvoiceService.getPopUpURL(testValue.testCorpNum,MgtKeyType,MgtKey,UserID)
+    url = taxinvoiceService.getPopUpURL(CorpNum, MgtKeyType, MgtKey, UserID)
     print("URL: %s" % url)
+
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

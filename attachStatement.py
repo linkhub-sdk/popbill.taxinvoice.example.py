@@ -8,20 +8,37 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import TaxinvoiceService,PopbillException
+from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
+
+'''
+1건의 전자명세서를 세금계산서에 첨부합니다.
+'''
 
 try:
     print( "=" * 15 + " 전자명세서 첨부 " + "=" * 15)
 
-    MgtKeyType = "SELL"        # 세금계산서 유형 , SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
-    MgtKey = "20160728-03"     # 세금계산서 문서관리번호
-    ItemCode = "121"           # 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서 125-입금표, 126-영수증
-    StmtMgtKey = "fbrdavxpsn"  # 전자명세서 문서관리번호
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
 
-    result = taxinvoiceService.attachStatement(testValue.testCorpNum, MgtKeyType, MgtKey, ItemCode, StmtMgtKey, testValue.testUserID)
+    # 세금계산서 발행유형 , SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
+    MgtKeyType = "SELL"
+
+    # 세금계산서 문서관리번호
+    MgtKey = "20160728-03"
+
+    # 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서 125-입금표, 126-영수증
+    ItemCode = "121"
+
+    # 전자명세서 문서관리번호
+    StmtMgtKey = "fbrdavxpsn"
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    result = taxinvoiceService.attachStatement(CorpNum, MgtKeyType, MgtKey, ItemCode, StmtMgtKey, UserID)
 
     print("처리결과 : [%d] %s" % (result.code,result.message))
 except PopbillException as PE:
