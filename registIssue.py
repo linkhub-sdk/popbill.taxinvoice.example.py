@@ -22,12 +22,11 @@ taxinvoiceService.IsTest = testValue.IsTest
 try:
     print("=" * 15 + " 세금계산서 1건 즉시발행 " + "=" * 15)
 
-
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
     # 세금계산서 문서관리번호
-    mgtKey = "20161118-05"
+    mgtKey = "20161122-06"
 
     # 지연발행 강제여부
     # 발행마감일이 지난 세금계산서를 발행하는 경우, 가산세가 부과될 수 있습니다.
@@ -53,7 +52,7 @@ try:
     taxinvoice = Taxinvoice(
 
         # 작성일자, 날짜형식(yyyyMMdd)
-        writeDate = "20161118",
+        writeDate = "20161122",
 
         # 과금방향, '정과금(공급자)', '역과금(공급받는자)'중 기재
         # 역과금의 경우 역발행세금계산서 발행시에만 사용가능

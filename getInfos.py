@@ -34,6 +34,7 @@ try:
     MgtKeyList.append("20161117-01")
     MgtKeyList.append("20161117-02")
     MgtKeyList.append("20161117-03")
+    MgtKeyList.append("20161122-06")
 
     InfoList = taxinvoiceService.getInfos(CorpNum, MgtKeyType, MgtKeyList)
 

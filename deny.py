@@ -29,7 +29,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161117-01"
+    MgtKey = "20161122-06"
 
     # 메모
     Memo = "발행예정 거부 메모"

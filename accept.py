@@ -24,10 +24,10 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 세금계산서 발행유령, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
-    MgtKeyType = "BUY"
+    MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "111-2222-3333"
+    MgtKey = "20161122-05"
 
     # 메모
     Memo = "발행예정 승인 메모"

@@ -29,7 +29,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161118-02"
+    MgtKey = "20161122-06"
 
     # 거래명세서 동시작성여부
     writeSpecification = False
@@ -41,7 +41,7 @@ try:
     taxinvoice = Taxinvoice(
 
         # 작성일자, 날짜형식(yyyyMMdd)
-        writeDate = "20161118",
+        writeDate = "20161122",
 
         # 과금방향, '정과금(공급자)', '역과금(공급받는자)'중 기재
         # 역과금의 경우 역발행세금계산서 발행시에만 사용가능

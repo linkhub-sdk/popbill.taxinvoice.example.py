@@ -29,10 +29,10 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161117-01"
+    MgtKey = "20161122-05"
 
     # 첨부파일 아이디, GetFiles API의 응답항목(AtachedFile) 확인.
-    FileID = "D447272E-6A0B-4112-9D8F-D0D1E1374F96.PBF"
+    FileID = "AA5A49DC-8DBF-4F2D-B6ED-8AE84611058E.PBF"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

@@ -28,17 +28,16 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161118-03"
+    MgtKey = "20161122-06"
 
     # 메모
-    Memo = "처리시 메모"
+    Memo = "발행예정 메모"
 
     # 안내메일 제목, 미기재시 기본양식으로 전송
     EmailSubject = ""
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID
-
 
     result = taxinvoiceService.send(CorpNum, MgtKeyType, MgtKey, Memo, EmailSubject, UserID)
 

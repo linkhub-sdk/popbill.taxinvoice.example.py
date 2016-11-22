@@ -27,18 +27,19 @@ try:
     MgtKeyType = "SELL"
 
     # 세금계산서 문서관리번호
-    MgtKey = "20160728-03"
+    MgtKey = "20161122-06"
 
     # 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서 125-입금표, 126-영수증
     ItemCode = "121"
 
     # 전자명세서 문서관리번호
-    StmtMgtKey = "fbrdavxpsn"
+    StmtMgtKey = "20161116-01"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID
 
-    result = taxinvoiceService.attachStatement(CorpNum, MgtKeyType, MgtKey, ItemCode, StmtMgtKey, UserID)
+    result = taxinvoiceService.attachStatement(CorpNum, MgtKeyType, MgtKey, ItemCode,
+        StmtMgtKey, UserID)
 
     print("처리결과 : [%d] %s" % (result.code,result.message))
 except PopbillException as PE:

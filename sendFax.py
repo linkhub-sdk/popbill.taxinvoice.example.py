@@ -30,7 +30,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161118-03"
+    MgtKey = "20161122-06"
 
     # 발신번호
     Sender = "070-4304-2991"

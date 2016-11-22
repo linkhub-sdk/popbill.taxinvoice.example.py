@@ -27,7 +27,7 @@ try:
     # 팝빌회원 아이디
     UserID = testValue.testUserID
 
-    # SBOX : 매출보관함, PBOX : 매입보관함 , TBOX : 임시문서함 , WRITE : 문서작성
+    # SBOX : 매출문서함, PBOX : 매입문서함 , TBOX : 임시문서함 , WRITE : 문서작성
     TOGO = "WRITE"
 
     url = taxinvoiceService.getURL(CorpNum, UserID, TOGO)

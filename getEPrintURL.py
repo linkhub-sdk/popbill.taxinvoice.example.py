@@ -28,7 +28,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서 관리번호
-    MgtKey = "20161116-01"
+    MgtKey = "20161122-06"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

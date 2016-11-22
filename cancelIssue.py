@@ -22,7 +22,7 @@ taxinvoiceService.IsTest = testValue.IsTest
 '''
 
 try:
-    print("=" * 15 + "세금계산서 발행 취소" + "=" * 15)
+    print("=" * 15 + " 세금계산서 발행 취소 " + "=" * 15)
 
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
@@ -31,7 +31,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "111-2222-3333"
+    MgtKey = "20161122-06"
 
     # 메모
     Memo = "발행취소 메모"

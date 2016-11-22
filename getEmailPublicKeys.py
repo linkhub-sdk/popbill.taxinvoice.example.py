@@ -18,7 +18,7 @@ taxinvoiceService.IsTest = testValue.IsTest
 '''
 
 try:
-    print("=" * 15 + "대용량사업자 유통 메일 주소" + "=" * 15)
+    print("=" * 15 + " 대용량사업자 유통 메일 주소 " + "=" * 15)
 
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum

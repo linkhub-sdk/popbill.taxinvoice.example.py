@@ -20,7 +20,7 @@ taxinvoiceService.IsTest = testValue.IsTest
 '''
 
 try:
-    print("=" * 15 + "세금계산서 파일첨부" + "=" * 15)
+    print("=" * 15 + " 세금계산서 파일첨부 " + "=" * 15)
 
     # 팝빌회원 아이디
     CorpNum = testValue.testCorpNum
@@ -29,7 +29,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "111-2222-3333"
+    MgtKey = "20161122-05"
 
     # 파일경로
     FilePath = "test.jpeg"

@@ -28,7 +28,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 세금계산서 문서관리번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
-    MgtKey = "20161122-04"
+    MgtKey = "20161122-06"
 
     # 거래명세서 동시작성여부
     writeSpecification = False

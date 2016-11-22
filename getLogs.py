@@ -29,7 +29,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161116-01"
+    MgtKey = "20161122-06"
 
     LogList = taxinvoiceService.getLogs(CorpNum, MgtKeyType, MgtKey)
 
@@ -42,6 +42,7 @@ try:
         print("procCorpName : %s" % f.procCorpName)
         print("procMemo : %s" % f.procMemo)
         print("regDT : %s" % f.regDT)
+        print
         i += 1
 
 except PopbillException as PE:

@@ -31,10 +31,10 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "111-2222-3333"
+    MgtKey = "20161122-05"
 
     # 메모
-    Memo = "처리시 메모"
+    Memo = "역발행 요청 메모"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID
