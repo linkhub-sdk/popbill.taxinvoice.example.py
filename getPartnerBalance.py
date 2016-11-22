@@ -8,9 +8,9 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import TaxinvoiceService,PopbillException
+from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''

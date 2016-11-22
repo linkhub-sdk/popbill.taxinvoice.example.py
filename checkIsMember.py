@@ -10,7 +10,7 @@ import testValue
 
 from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -25,6 +25,6 @@ try:
 
     result = taxinvoiceService.checkIsMember(CorpNum)
 
-    print("가입여부 : %d %s" % (result.code,result.message) )
+    print("가입여부 : [%d] %s" % (result.code,result.message) )
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

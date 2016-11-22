@@ -10,7 +10,7 @@ import testValue
 
 from popbill import ContactInfo, TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''

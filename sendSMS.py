@@ -10,7 +10,7 @@ import testValue
 
 from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -43,7 +43,8 @@ try:
     # 팝빌회원 아이디
     UserID = testValue.testUserID
 
-    result = taxinvoiceService.sendSMS(CorpNum, MgtKeyType, MgtKey, Sender, Receiver, Contents, UserID)
+    result = taxinvoiceService.sendSMS(CorpNum, MgtKeyType, MgtKey, Sender, Receiver,
+        Contents, UserID)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 

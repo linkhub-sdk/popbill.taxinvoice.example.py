@@ -10,7 +10,7 @@ import testValue
 
 from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -39,7 +39,7 @@ try:
     UserID = testValue.testUserID
 
     result = taxinvoiceService.detachStatement(CorpNum, MgtKeyType, MgtKey,
-                                    ItemCode, StmtMgtKey, UserID)
+        ItemCode, StmtMgtKey, UserID)
 
     print("처리결과 : [%d] %s" % (result.code,result.message))
 except PopbillException as PE:

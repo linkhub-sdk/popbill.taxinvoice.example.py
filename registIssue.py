@@ -10,7 +10,7 @@ import testValue
 
 from popbill import Taxinvoice, TaxinvoiceDetail, Contact, TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -150,6 +150,9 @@ try:
 
         # 공급받는자 담당자 메일주소
         invoiceeEmail1 = "test@test.com",
+
+        # 공급받는자 연락처
+        invoiceeTEL1 = "070-111-222",
 
         # 공급받는자 담당자 휴대폰번호
         invoiceeHP1 = "010-2222-1111",

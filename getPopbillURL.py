@@ -8,9 +8,9 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import TaxinvoiceService,PopbillException
+from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -29,7 +29,7 @@ try:
 
     # TOGO : LOGIN-팝빌 로그인 URL, CHRG-팝빌 포인트 충전 URL,
     # CERT-공인인증서 등록, SEAL-인감 및 첨부문서 등록
-    TOGO = "CERT"
+    TOGO = "CHRG"
 
     url = taxinvoiceService.getPopbillURL(CorpNum, UserID, TOGO)
 

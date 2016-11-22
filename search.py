@@ -10,7 +10,7 @@ import testValue
 
 from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -66,7 +66,7 @@ try:
     Page = 1
 
     # 페이지당 검색개수
-    PerPage = 10
+    PerPage = 20
 
     # 정렬 방향, D-내림차순, A-오름차순
     Order = "D"

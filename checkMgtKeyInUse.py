@@ -10,7 +10,7 @@ import testValue
 
 from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -21,6 +21,7 @@ taxinvoiceService.IsTest = testValue.IsTest
 try:
     print("=" * 15 + " 세금계산서 문서관리번호 사용여부 확인 " + "=" * 15)
 
+    # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
     # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁

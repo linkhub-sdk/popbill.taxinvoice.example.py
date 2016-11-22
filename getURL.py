@@ -10,7 +10,7 @@ import testValue
 
 from popbill import TaxinvoiceService, PopbillException
 
-taxinvoiceService =  TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -28,9 +28,9 @@ try:
     UserID = testValue.testUserID
 
     # SBOX : 매출보관함, PBOX : 매입보관함 , TBOX : 임시문서함 , WRITE : 문서작성
-    togo = "WRITE"
+    TOGO = "WRITE"
 
-    url = taxinvoiceService.getURL(CorpNum, UserID, togo)
+    url = taxinvoiceService.getURL(CorpNum, UserID, TOGO)
     print("URL: %s" % url)
 
 except PopbillException as PE:
