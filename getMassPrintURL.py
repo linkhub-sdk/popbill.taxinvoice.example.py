@@ -33,10 +33,7 @@ try:
     MgtKeyList.append("20161117-02")
     MgtKeyList.append("20161117-03")
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    url = taxinvoiceService.getMassPrintURL(CorpNum, MgtKeyType, MgtKeyList, UserID)
+    url = taxinvoiceService.getMassPrintURL(CorpNum, MgtKeyType, MgtKeyList)
     print("URL: %s" % url)
 
 except PopbillException as PE:

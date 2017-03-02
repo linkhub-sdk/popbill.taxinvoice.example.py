@@ -30,10 +30,7 @@ try:
     # 문서관리번호
     MgtKey = "20161122-01"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    url = taxinvoiceService.getPrintURL(CorpNum, MgtKeyType, MgtKey, UserID)
+    url = taxinvoiceService.getPrintURL(CorpNum, MgtKeyType, MgtKey)
     print("URL: %s" % url)
 
 except PopbillException as PE:
