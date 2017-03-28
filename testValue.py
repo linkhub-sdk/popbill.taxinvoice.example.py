@@ -4,9 +4,9 @@
  팝빌 전자세금계산서 API Python SDK Example
 
  - Python SDK 연동환경 설정방법 안내 : http://blog.linkhub.co.kr/581
- - 업데이트 일자 : 2016-11-17
+ - 업데이트 일자 : 2017-03-28
  - 연동 기술지원 연락처 : 1600-8536 / 070-4304-2991~2
- - 연동 기술지원 이메일 : dev@linkhub.co.kr
+ - 연동 기술지원 이메일 : code@linkhub.co.kr
 
  <테스트 연동개발 준비사항>
  1) 21, 24번 라인에 선언된 링크아이디(LinkID)와 비밀키(SecretKey)를

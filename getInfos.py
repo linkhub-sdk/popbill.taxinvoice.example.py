@@ -31,7 +31,7 @@ try:
 
     # 문서관리번호 배열, 최대 1000건
     MgtKeyList = []
-    MgtKeyList.append("20161221-03")
+    MgtKeyList.append("20170323-02")
     MgtKeyList.append("20161117-02")
     MgtKeyList.append("20161117-03")
     MgtKeyList.append("20161122-06")

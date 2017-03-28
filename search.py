@@ -66,7 +66,7 @@ try:
     Page = 1
 
     # 페이지당 검색개수
-    PerPage = 20
+    PerPage = 5
 
     # 정렬 방향, D-내림차순, A-오름차순
     Order = "D"
@@ -74,9 +74,12 @@ try:
     # 거래처 정보, 거래처 상호 또는 사업자등록번호 기재, 공백처리시 전체조회
     QString = ""
 
+    InterOPYN = ""
+
     response = taxinvoiceService.search(CorpNum, MgtKeyType, DType,
                 SDate, EDate, State, Type, TaxType, LateOnly, TaxRegIDYN,
-                TaxRegIDType, TaxRegID, Page, PerPage, Order, UserID, QString)
+                TaxRegIDType, TaxRegID, Page, PerPage, Order, UserID,
+                QString, InterOPYN)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
