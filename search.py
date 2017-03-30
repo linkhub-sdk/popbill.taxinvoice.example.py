@@ -28,7 +28,6 @@ try:
     # 팝빌회원 아이디
     UserID = testValue.testUserID
 
-
     # 세금계산서 유형 SELL-매출, BUY-매입, TRUSTEE-위수탁
     MgtKeyType = "SELL"
 
@@ -36,10 +35,10 @@ try:
     DType = "W"
 
     # 시작일자, 표시형식(yyyyMMdd)
-    SDate = "20161001"
+    SDate = "20170101"
 
     # 종료일자, 표시형식(yyyyMMdd)
-    EDate = "20161231"
+    EDate = "20170601"
 
     # 세금계산서 상태코드 배열, 2,3번째 자리에 와일드카드(*) 사용가능
     State = ["3**", "6**"]
@@ -74,6 +73,7 @@ try:
     # 거래처 정보, 거래처 상호 또는 사업자등록번호 기재, 공백처리시 전체조회
     QString = ""
 
+    # 연동문서 조회여부, 공백-전체조회, 0-일반문서 조회, 1-연동문서조회
     InterOPYN = ""
 
     response = taxinvoiceService.search(CorpNum, MgtKeyType, DType,
@@ -90,7 +90,7 @@ try:
 
     i = 1
     for info in response.list :
-        print("====== 세금계산서 정보 [%d] ======"% i)
+        print("====== 세금계산서 상태/요약 정보 [%d] ======" % i)
         for key, value in info.__dict__.items():
             print("%s : %s" % (key, value))
         i += 1
