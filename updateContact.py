@@ -26,8 +26,12 @@ try:
     # 팝빌회원 아이디
     UserID = testValue.testUserID
 
+
     # 담당자 정보
     updateInfo = ContactInfo (
+
+        # 담당자 아이디
+        id = UserID,
 
         # 담당자 성명
         personName = "담당자 성명",
