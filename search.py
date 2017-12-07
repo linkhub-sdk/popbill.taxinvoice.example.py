@@ -35,10 +35,10 @@ try:
     DType = "W"
 
     # 시작일자, 표시형식(yyyyMMdd)
-    SDate = "20170101"
+    SDate = "20171101"
 
     # 종료일자, 표시형식(yyyyMMdd)
-    EDate = "20170601"
+    EDate = "20171231"
 
     # 세금계산서 상태코드 배열, 2,3번째 자리에 와일드카드(*) 사용가능
     State = ["3**", "6**"]
@@ -48,6 +48,9 @@ try:
 
     # 과세형태 배열, T-과세, N-면세, Z-영세
     TaxType = ["T", "N", "Z"]
+
+    # 발행형태 배열, N-정발행, R-역발행, T-위수탁
+    IssueType = ["N", "R", "T"]
 
     # 지연발행 여부, 0-정상발행, 1-지연발행
     LateOnly = ""
@@ -79,7 +82,7 @@ try:
     response = taxinvoiceService.search(CorpNum, MgtKeyType, DType,
                 SDate, EDate, State, Type, TaxType, LateOnly, TaxRegIDYN,
                 TaxRegIDType, TaxRegID, Page, PerPage, Order, UserID,
-                QString, InterOPYN)
+                QString, InterOPYN, IssueType)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
