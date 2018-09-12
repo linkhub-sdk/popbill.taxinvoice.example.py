@@ -17,11 +17,11 @@ taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
-전자세금계산서 관련 메일 전송 여부전송 항목에 대한 전송여부를 목록으로 반환합니다
+전자세금계산서 관련 메일전송 항목에 대한 전송여부를 목록으로 반환합니다
 '''
 
 try:
-    print("=" * 15 + " 세금계산서 메일 전송 여부 확인" + "=" * 15)
+    print("=" * 15 + " 세금계산서 메일전송여부 확인" + "=" * 15)
 
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
