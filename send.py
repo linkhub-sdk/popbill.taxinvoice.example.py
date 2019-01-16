@@ -14,8 +14,9 @@ taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
-발행예정 세금계산서를 [취소] 처리 합니다.
- [취소]된 세금계산서를 삭제(Delete API)하면 등록된 문서관리번호를 재사용할 수 있습니다
+1건의 [임시저장] 상태의 세금계산서를 [발행예정] 처리합니다.
+- 발행예정이란 공급자와 공급받는자 사이에 세금계산서 확인 후 발행하는 방법입니다.
+- "[전자세금계산서 API 연동매뉴얼] > 1.2.1. 정발행 > 다. 임시저장 발행예정" 의 프로세스를 참조하시기 바랍니다.
 '''
 
 try:
@@ -28,7 +29,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161122-06"
+    MgtKey = "20190108-001"
 
     # 메모
     Memo = "발행예정 메모"

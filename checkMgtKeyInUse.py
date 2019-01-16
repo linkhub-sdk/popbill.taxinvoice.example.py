@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -28,10 +31,10 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 사업자별로 중복되지 않도록 구성
-    MgtKey = "20161122-06"
+    MgtKey = "20190108-001"
 
     keyInUse = taxinvoiceService.checkMgtKeyInUse(CorpNum, MgtKeyType, MgtKey)
 
     print("문서관리번호 사용여부 : 사용중" if keyInUse else "문서관리번호 사용여부 : 미사용중")
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

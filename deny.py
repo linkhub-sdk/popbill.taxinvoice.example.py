@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -26,10 +29,10 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 관리번호 유형 , SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
-    MgtKeyType = "SELL"
+    MgtKeyType = "BUY"
 
     # 문서관리번호
-    MgtKey = "20161122-06"
+    MgtKey = "20190108-001"
 
     # 메모
     Memo = "발행예정 거부 메모"
@@ -39,6 +42,6 @@ try:
 
     result = taxinvoiceService.deny(CorpNum, MgtKeyType, MgtKey, Memo, UserID)
 
-    print("처리결과 : [%d] %s" % (result.code,result.message))
+    print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

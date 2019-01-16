@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -29,7 +32,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161122-05"
+    MgtKey = "20190108-001"
 
     # 첨부파일 아이디, GetFiles API의 응답항목(AtachedFile) 확인.
     FileID = "AA5A49DC-8DBF-4F2D-B6ED-8AE84611058E.PBF"
@@ -39,6 +42,6 @@ try:
 
     result = taxinvoiceService.deleteFile(CorpNum, MgtKeyType, MgtKey, FileID, UserID)
 
-    print("처리결과 : [%d] %s" % (result.code,result.message))
+    print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

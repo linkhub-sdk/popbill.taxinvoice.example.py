@@ -29,7 +29,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161122-05"
+    MgtKey = "20190108-002"
 
     # 파일경로
     FilePath = "test.jpeg"

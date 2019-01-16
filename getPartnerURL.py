@@ -24,11 +24,12 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # CHRG-팝빌 포인트 충전 URL,
+    # CHRG-포인트 충전 URL
     TOGO = "CHRG"
 
     url = taxinvoiceService.getPartnerURL(CorpNum,  TOGO)
 
     print("URL: %s" % url)
+
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

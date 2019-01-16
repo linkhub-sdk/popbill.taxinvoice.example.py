@@ -35,13 +35,13 @@ try:
     DType = "W"
 
     # 시작일자, 표시형식(yyyyMMdd)
-    SDate = "20171101"
+    SDate = "20181201"
 
     # 종료일자, 표시형식(yyyyMMdd)
-    EDate = "20171231"
+    EDate = "20190108"
 
     # 세금계산서 상태코드 배열, 2,3번째 자리에 와일드카드(*) 사용가능
-    State = ["3**", "6**"]
+    State = ["1**", "3**", "6**"]
 
     # 문서유형 배열, N-일반 세금계산서, M-수정 세금계산서
     Type = ["N", "M"]
@@ -56,7 +56,7 @@ try:
     LateOnly = ""
 
     # 종사업장번호 유무, 공백-전체조회, 0-종사업장번호 없음, 1-종사업장번호 있음
-    TaxRegIDYN = ""
+    TaxRegIDYN = "1"
 
     # 종사업장번호 사업자유형, S-공급자, B-공급받는자, T-수탁자
     TaxRegIDType = "S"
@@ -97,7 +97,7 @@ try:
         for key, value in info.__dict__.items():
             print("%s : %s" % (key, value))
         i += 1
-        print
+        print("\n")
 
 
 except PopbillException as PE:

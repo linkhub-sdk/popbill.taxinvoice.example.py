@@ -37,7 +37,7 @@ try:
     taxinvoice = Taxinvoice(
 
         # [필수] 작성일자, 날짜형식(yyyyMMdd) ex)20180116
-        writeDate="20181123",
+        writeDate="20190115",
 
         # [필수] 과금방향, [정과금(공급자), 역과금(공급받는자)]중 기재
         # 역과금의 경우 역발행세금계산서 발행시에만 사용가능
@@ -118,7 +118,7 @@ try:
 
         # [역발행시 필수] 공급받는자 문서관리번호, 1~24자리 (숫자, 영문, '-', '_') 조합으로
         # 사업자별로 중복되지 않도록 구성
-        invoiceeMgtKey="20181123-002",
+        invoiceeMgtKey="20190115-1010",
 
         # [필수] 공급받는자 대표자 성명
         invoiceeCEOName="공급받는자 대표자 성명",
@@ -218,7 +218,7 @@ try:
     taxinvoice.detailList = [
         TaxinvoiceDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
-            purchaseDT="20181123",  # 거래일자, yyyyMMdd
+            purchaseDT="20190108",  # 거래일자, yyyyMMdd
             itemName="품목1",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량
@@ -229,7 +229,7 @@ try:
         ),
         TaxinvoiceDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
-            purchaseDT="20181123",  # 거래일자, yyyyMMdd
+            purchaseDT="20190108",  # 거래일자, yyyyMMdd
             itemName="품목2",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량
@@ -251,12 +251,12 @@ try:
         Contact(
             serialNum=1,  # 일련번호, 1부터 순차기재
             contactName="추가담당자 성명",  # 담당자명
-            email="test1@test.com"  # 메일주소
+            email="support@linkhub.co.kr"  # 메일주소
         ),
         Contact(
             serialNum=2,  # 일련번호, 1부터 순차기재
             contactName="추가담당자 성명",  # 담당자명
-            email="test1@test.com"  # 메일주소
+            email="code@linkhub.co.kr"  # 메일주소
         )
     ]
 

@@ -29,19 +29,20 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161122-06"
+    MgtKey = "20190116-001"
 
     LogList = taxinvoiceService.getLogs(CorpNum, MgtKeyType, MgtKey)
 
     i = 1
     for f in LogList:
         print("%d : " % i)
-        print("docLogType : %s" % f.docLogType)
-        print("log : %s" % f.log)
-        print("procType : %s" % f.procType)
-        print("procCorpName : %s" % f.procCorpName)
-        print("procMemo : %s" % f.procMemo)
-        print("regDT : %s" % f.regDT)
+        print("docLogType (로그타입) : %s" % f.docLogType)
+        print("log (이력정보) : %s" % f.log)
+        print("procType (처리형태) : %s" % f.procType)
+        print("procCorpName (처리회사명) : %s" % f.procCorpName)
+        print("procMemo (처리메모) : %s" % f.procMemo)
+        print("regDT (등록일시) : %s" % f.regDT)
+        print("ip (아이피) : %s" % f.ip)
         print
         i += 1
 

@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -27,20 +30,20 @@ try:
     MgtKeyType = "SELL"
 
     # 문서 관리번호
-    MgtKey = "20161122-06"
+    MgtKey = "20190108-002"
 
     # 전자명세서 종류코드, 121-거래명세서, 122-청구서, 123-견적서, 124-발주서 125-입금표, 126-영수증
     ItemCode = "121"
 
     # 전자명세서 문서관리번호
-    StmtMgtKey = "20161116-01"
+    StmtMgtKey = "20190116-001"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID
 
     result = taxinvoiceService.detachStatement(CorpNum, MgtKeyType, MgtKey,
-        ItemCode, StmtMgtKey, UserID)
+                                               ItemCode, StmtMgtKey, UserID)
 
-    print("처리결과 : [%d] %s" % (result.code,result.message))
+    print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

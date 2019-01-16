@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -29,18 +32,18 @@ try:
     MgtKeyType = "SELL"
 
     # 문서 관리번호
-    MgtKey = "20161122-05"
+    MgtKey = "20190108-002"
 
     fileList = taxinvoiceService.getFiles(CorpNum, MgtKeyType, MgtKey)
 
     i = 1
     for f in fileList:
         print("%d:" % i)
-        print("serialNum : %s" % f.serialNum)
-        print("attachedFile : %s" % f.attachedFile)
-        print("displayName : %s" % f.displayName)
-        print("regDT : %s" % f.regDT)
+        print("serialNum (첨부파일 일련번호) : %s" % f.serialNum)
+        print("attachedFile (파일아이디 [첨부파일 삭제시 사용]) : %s" % f.attachedFile)
+        print("displayName (첨부파일명) : %s" % f.displayName)
+        print("regDT (첨부일시) : %s" % f.regDT)
         i += 1
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

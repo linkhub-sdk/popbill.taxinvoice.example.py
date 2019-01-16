@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -14,11 +17,8 @@ taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
-[발행완료] 상태의 세금계산서를 [발행취소] 처리합니다.
-- 세금계산서 발행취소는 국세청 전송전에만 가능합니다.
-- 발행취소된 세금계산서는 국세청에 전송되지 않습니다.
-- 발행취소 세금계산서에 기재된 문서관리번호를 재사용 하기 위해서는
-  삭제(Delete API)를 호출하여 [삭제] 처리 하셔야 합니다.
+[임시저장] 또는 [발행대기] 상태의 세금계산서를 [공급자]가 [발행]합니다.
+ - 세금계산서 항목별 정보는 "[전자세금계산서 API 연동매뉴얼] > 4.1. (세금)계산서구성"을 참조하시기 바랍니다.
 '''
 
 try:
@@ -31,7 +31,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161122-05"
+    MgtKey = "20190108-001"
 
     # 메모
     Memo = "발행 메모"
@@ -49,8 +49,8 @@ try:
     UserID = testValue.testUserID
 
     result = taxinvoiceService.issue(CorpNum, MgtKeyType, MgtKey, Memo,
-                                    EmailSubject, ForceIssue, UserID)
+                                     EmailSubject, ForceIssue, UserID)
 
-    print("처리결과 : [%d] %s" % (result.code,result.message))
+    print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

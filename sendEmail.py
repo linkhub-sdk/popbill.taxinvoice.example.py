@@ -27,7 +27,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20161122-06"
+    MgtKey = "20190108-001"
 
     # 수신메일주소
     ReceiverMail = "test@test.com"

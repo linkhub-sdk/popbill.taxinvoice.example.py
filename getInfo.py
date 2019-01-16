@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -29,7 +32,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20170323-02"
+    MgtKey = "20190116-001"
 
     taxinvoiceInfo = taxinvoiceService.getInfo(CorpNum, MgtKeyType, MgtKey)
 
@@ -37,7 +40,7 @@ try:
     # 실제 변수처리시에는 taxinvoiceInfo.stateCode, taxinvoiceInfo.openYN등으로 처리가능
     for key, value in taxinvoiceInfo.__dict__.items():
         if not key.startswith("__"):
-            print("%s : %s" % (key,value))
+            print("%s : %s" % (key, value))
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
