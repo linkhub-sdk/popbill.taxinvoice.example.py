@@ -44,7 +44,7 @@ try:
     taxinvoice = Taxinvoice(
 
         # 작성일자, 날짜형식(yyyyMMdd)
-        writeDate="20161122",
+        writeDate="20190117",
 
         # 과금방향, '정과금(공급자)', '역과금(공급받는자)'중 기재
         # 역과금의 경우 역발행세금계산서 발행시에만 사용가능
@@ -117,7 +117,7 @@ try:
         invoiceeCorpNum='8888888888',
 
         # 공급받는자 상호
-        invoiceeCorpName="공급받는자 상호_#$@#$!<>&_Python",
+        invoiceeCorpName="공급받는자 상호",
 
         # 공급받는자 문서관리번호
         invoiceeMgtKey=None,
@@ -186,9 +186,11 @@ try:
         remark3='비고3',
 
         # 기재상 '권' 항목, 최대값 32767
+        # 미기재시 kwon=None,
         kwon=1,
 
         # 기재상 '호' 항목, 최대값 32767
+        # 미기재시 ho=None,
         ho=2,
 
         # 사업자등록증 이미지 첨부여부

@@ -184,10 +184,12 @@ try:
         remark3="비고3",
 
         # 기재상 '권' 항목, 최대값 32767
-        kwon=10,
+        # 미기재시 kwon=None,
+        kwon=1,
 
         # 기재상 '호' 항목, 최대값 32767
-        ho=10,
+        # 미기재시 ho=None,
+        ho=2,
 
         # 사업자등록증 이미지 첨부여부
         businessLicenseYN=False,
