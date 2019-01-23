@@ -17,7 +17,7 @@ taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
-해당 사업자의 파트너 연동회원 가입여부를 확인합니다.
+파트너의 연동회원으로 가입된 사업자 번호인지 확안합니다.
 '''
 
 try:
@@ -30,4 +30,4 @@ try:
 
     print("가입여부 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

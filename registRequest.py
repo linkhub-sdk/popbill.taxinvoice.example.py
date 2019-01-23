@@ -36,7 +36,7 @@ try:
     # 세금계산서 정보
     taxinvoice = Taxinvoice(
 
-        # [필수] 작성일자, 날짜형식(yyyyMMdd) ex)20180116
+        # [필수] 작성일자, 날짜형식(yyyyMMdd) ex)20190115
         writeDate="20190115",
 
         # [필수] 과금방향, [정과금(공급자), 역과금(공급받는자)]중 기재
@@ -217,10 +217,12 @@ try:
 
     # 상세항목 0~99개 까지 작성가능.
     # 일련번호 (serialNum) 는 1부터 99까지 순차기재.
-    taxinvoice.detailList = [
+    taxinvoice.detailList = []
+
+    taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
-            purchaseDT="20190108",  # 거래일자, yyyyMMdd
+            purchaseDT="20190116",  # 거래일자, yyyyMMdd
             itemName="품목1",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량
@@ -228,10 +230,13 @@ try:
             supplyCost="50000",  # 공급가액
             tax="5000",  # 세액
             remark="품목비고"  # 비고
-        ),
+        )
+    )
+
+    taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
-            purchaseDT="20190108",  # 거래일자, yyyyMMdd
+            purchaseDT="20190116",  # 거래일자, yyyyMMdd
             itemName="품목2",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량
@@ -240,7 +245,7 @@ try:
             tax="5000",  # 세액
             remark="품목비고"  # 비고
         )
-    ]
+    )
 
     ######################################################################
     #                           추가담당자 정보
@@ -249,18 +254,23 @@ try:
     ######################################################################
 
     # 최대 5개까지 기재 가능
-    taxinvoice.addContactList = [
+    taxinvoice.addContactList = []
+
+    taxinvoice.addContactList.append(
         Contact(
             serialNum=1,  # 일련번호, 1부터 순차기재
             contactName="추가담당자 성명",  # 담당자명
-            email="support@linkhub.co.kr"  # 메일주소
-        ),
+            email="test1@test.com"  # 메일주소
+        )
+    )
+
+    taxinvoice.addContactList.append(
         Contact(
             serialNum=2,  # 일련번호, 1부터 순차기재
             contactName="추가담당자 성명",  # 담당자명
-            email="code@linkhub.co.kr"  # 메일주소
+            email="test1@test.com"  # 메일주소
         )
-    ]
+    )
 
     # 즉시요청 메모
     memo = "즉시요청 메모"
@@ -270,4 +280,4 @@ try:
     print("처리결과 : [%d] %s" % (result.code, result.message))
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

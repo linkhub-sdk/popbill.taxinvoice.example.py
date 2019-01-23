@@ -40,4 +40,4 @@ try:
         i += 1
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

@@ -32,4 +32,4 @@ try:
 
     print("공인인증서 만료일시: %s" % expiredate)
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

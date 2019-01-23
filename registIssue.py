@@ -29,7 +29,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 세금계산서 문서관리번호
-    mgtKey = "1_20190108"
+    mgtKey = "20190108-001"
 
     # 지연발행 강제여부
     # 발행마감일이 지난 세금계산서를 발행하는 경우, 가산세가 부과될 수 있습니다.
@@ -168,13 +168,13 @@ try:
         ######################################################################
 
         # 공급가액 합계
-        supplyCostTotal="100000",
+        supplyCostTotal="3000",
 
         # 세액 합계
-        taxTotal="10000",
+        taxTotal="300",
 
         # 합계금액, 공급가액 합계 + 세액 합계
-        totalAmount="110000",
+        totalAmount="3300",
 
         # 기재상 '일련번호' 항목
         serialNum='123',
@@ -228,30 +228,37 @@ try:
     #                           상세항목(품목) 정보
     ######################################################################
 
-    taxinvoice.detailList = [
+    # 상세항목 0~99개 까지 작성가능.
+    # 일련번호 (serialNum) 는 1부터 99까지 순차기재.
+    taxinvoice.detailList = []
+
+    taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
-            purchaseDT='20190108',  # 거래일자, yyyyMMdd
+            purchaseDT="20190116",  # 거래일자, yyyyMMdd
             itemName="품목1",  # 품목
-            spec='규격',  # 규격
+            spec="규격",  # 규격
             qty=1,  # 수량
-            unitCost='50000',  # 단가
-            supplyCost='50000',  # 공급가액
-            tax='5000',  # 세액
-            remark='품목비고'  # 비고
-        ),
+            unitCost="1000",  # 단가
+            supplyCost="1000",  # 공급가액
+            tax="100",  # 세액
+            remark="품목비고"  # 비고
+        )
+    )
+
+    taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
-            purchaseDT='20190108',  # 거래일자, yyyyMMdd
+            purchaseDT="20190116",  # 거래일자, yyyyMMdd
             itemName="품목2",  # 품목
-            spec='규격',  # 규격
+            spec="규격",  # 규격
             qty=1,  # 수량
-            unitCost='50000',  # 단가
-            supplyCost='50000',  # 공급가액
-            tax='5000',  # 세액
-            remark='품목비고'  # 비고
+            unitCost="1000",  # 단가
+            supplyCost="2000",  # 공급가액
+            tax="200",  # 세액
+            remark="품목비고"  # 비고
         )
-    ]
+    )
 
     ######################################################################
     #                           추가담당자 정보
@@ -259,18 +266,24 @@ try:
     #   담당자 정보를 추가하여 발행안내메일을 다수에게 전송할 수 있습니다.
     ######################################################################
 
-    taxinvoice.addContactList = [
+    # 최대 5개까지 기재 가능
+    taxinvoice.addContactList = []
+
+    taxinvoice.addContactList.append(
         Contact(
             serialNum=1,  # 일련번호, 1부터 순차기재
-            contactName='추가담당자 성명',
-            email='test1@test.com'
-        ),
-        Contact(
-            serialNum=2,
-            contactName='추가담당자2',
-            email='test2@test.com'
+            contactName="추가담당자 성명",  # 담당자명
+            email="test1@test.com"  # 메일주소
         )
-    ]
+    )
+
+    taxinvoice.addContactList.append(
+        Contact(
+            serialNum=2,  # 일련번호, 1부터 순차기재
+            contactName="추가담당자 성명",  # 담당자명
+            email="test1@test.com"  # 메일주소
+        )
+    )
 
     result = taxinvoiceService.registIssue(CorpNum, taxinvoice, writeSpecification,
                                            forceIssue, dealInvoiceMgtKey, memo, emailSubject, UserID)
@@ -278,4 +291,4 @@ try:
     print("처리결과 : [%d] %s" % (result.code, result.message))
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

@@ -17,7 +17,7 @@ taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
-역발행 세금계산서를 [취소] 처리합니다.
+공급받는자가 역발행 세금계산서의 발행요청을 [취소] 합니다.
 - [취소]한 세금계산서의 문서관리번호를 재사용하기 위해서는 삭제 (Delete API) 를 호출해야 합니다.
 '''
 
@@ -43,4 +43,4 @@ try:
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

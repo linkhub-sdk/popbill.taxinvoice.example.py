@@ -34,4 +34,4 @@ try:
 
     print("URL: %s" % url)
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

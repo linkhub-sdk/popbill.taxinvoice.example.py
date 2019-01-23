@@ -44,4 +44,4 @@ try:
     print("처리결과 : [%d] %s" % (result.code,result.message))
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code , PE.message))

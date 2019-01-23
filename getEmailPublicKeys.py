@@ -31,4 +31,4 @@ try:
     for asp in aspList:
         print("인증번호[%s] : %s" % (asp.confirmNum, asp.email))
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

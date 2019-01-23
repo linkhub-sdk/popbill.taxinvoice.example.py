@@ -37,4 +37,4 @@ try:
 
     print("문서관리번호 사용여부 : 사용중" if keyInUse else "문서관리번호 사용여부 : 미사용중")
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

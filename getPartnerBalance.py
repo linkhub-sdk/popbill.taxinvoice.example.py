@@ -33,4 +33,4 @@ try:
     print("파트너 잔여포인트: %f" % balance)
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

@@ -31,4 +31,4 @@ try:
     print("발행단가 : %d" % unitCost)
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))
