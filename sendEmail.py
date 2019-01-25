@@ -29,7 +29,7 @@ try:
     # 문서관리번호
     MgtKey = "20190108-001"
 
-    # 수신메일주소
+    # 수신자 메일주소
     ReceiverMail = "test@test.com"
 
     # 팝빌회원 아이디

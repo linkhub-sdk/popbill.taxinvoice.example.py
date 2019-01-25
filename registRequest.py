@@ -43,14 +43,13 @@ try:
         # 역과금의 경우 역발행세금계산서 발행시에만 사용가능
         chargeDirection="정과금",
 
-        # [필수] 발행영태, [정발행, 역발행, 위수탁] 중 기재
+        # [필수] 발행형태, [정발행, 역발행, 위수탁] 중 기재
         issueType="역발행",
 
         # [필수] 영수/청구, [영수, 청구] 중 기재
         purposeType="영수",
 
-        # [필수] 발행시점, [직접발행, 승인시자동발행] '중 기재
-        # 발행예정(Send API) 프로세스를 구현하지 않는경우 "직접발행' 기재
+        # [필수] 발행시점
         issueTiming="직접발행",
 
         # [필수] 과세형태, [과세, 영세, 면세] 중 기재
@@ -96,9 +95,6 @@ try:
 
         # 공급자 담당자 휴대폰 번호
         invoicerHP='010-111-222',
-
-        # 정발행시 공급받는자에게 발행안내문자 전송여부
-        invoicerSMSSendYN=False,
 
         ######################################################################
         #                            공급받는자 정보
@@ -147,7 +143,9 @@ try:
         # 공급받는자 담당자 팩스번호
         invoiceeFAX1="070-111-222",
 
-        # 역발행시 공급자에게 발행안내문자 전송여부
+        # 역발행 요청시 알림문자 전송여부 (역발행에서만 사용가능)
+        # - 공급자 담당자 휴대폰번호(invoicerHP)로 전송
+        # - 전송시 포인트가 차감되며 전송실패하는 경우 포인트 환불처리
         invoiceeSMSSendYN=False,
 
         ######################################################################
@@ -222,7 +220,7 @@ try:
     taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
-            purchaseDT="20190116",  # 거래일자, yyyyMMdd
+            purchaseDT="20190115",  # 거래일자, yyyyMMdd
             itemName="품목1",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량
@@ -236,7 +234,7 @@ try:
     taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
-            purchaseDT="20190116",  # 거래일자, yyyyMMdd
+            purchaseDT="20190115",  # 거래일자, yyyyMMdd
             itemName="품목2",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량
@@ -247,33 +245,8 @@ try:
         )
     )
 
-    ######################################################################
-    #                           추가담당자 정보
-    # - 세금계산서 발행안내 메일을 수신받을 공급받는자 담당자가 다수인 경우
-    #   담당자 정보를 추가하여 발행안내메일을 다수에게 전송할 수 있습니다.
-    ######################################################################
-
-    # 최대 5개까지 기재 가능
-    taxinvoice.addContactList = []
-
-    taxinvoice.addContactList.append(
-        Contact(
-            serialNum=1,  # 일련번호, 1부터 순차기재
-            contactName="추가담당자 성명",  # 담당자명
-            email="test1@test.com"  # 메일주소
-        )
-    )
-
-    taxinvoice.addContactList.append(
-        Contact(
-            serialNum=2,  # 일련번호, 1부터 순차기재
-            contactName="추가담당자 성명",  # 담당자명
-            email="test1@test.com"  # 메일주소
-        )
-    )
-
-    # 즉시요청 메모
-    memo = "즉시요청 메모"
+    # 메모
+    memo = "역발행 즉시요청 메모"
 
     result = taxinvoiceService.registRequest(CorpNum, taxinvoice, memo, UserID)
 

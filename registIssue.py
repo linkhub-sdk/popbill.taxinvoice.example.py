@@ -29,7 +29,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 세금계산서 문서관리번호
-    mgtKey = "20190108-001"
+    mgtKey = "20190115-001"
 
     # 지연발행 강제여부
     # 발행마감일이 지난 세금계산서를 발행하는 경우, 가산세가 부과될 수 있습니다.
@@ -55,20 +55,19 @@ try:
     taxinvoice = Taxinvoice(
 
         # 작성일자, 날짜형식(yyyyMMdd)
-        writeDate="20190108",
+        writeDate="20190115",
 
         # 과금방향, '정과금(공급자)', '역과금(공급받는자)'중 기재
         # 역과금의 경우 역발행세금계산서 발행시에만 사용가능
         chargeDirection="정과금",
 
-        # 발행영태, '정발행','역발행','위수탁' 중 기재
+        # 발행형태, '정발행','역발행','위수탁' 중 기재
         issueType="정발행",
 
         # '영수'/'청구' 중 기재
         purposeType="없음",
 
-        # 발행시점, '직접발행', '승인시자동발행' '중 기재
-        # 발행예정(Send API) 프로세스를 구현하지 않는경우 '직접발행' 기재
+        # 발행시점
         issueTiming="직접발행",
 
         # 과세형태, '과세'/'영세'/'면세' 중 기재
@@ -114,7 +113,9 @@ try:
         # 공급자 담당자 휴대폰 번호
         invoicerHP='010-1111-2222',
 
-        # 발행 안내 문자 전송여부
+        # 발행시 알림문자 전송여부 (정발행에서만 사용가능)
+        # - 공급받는자 주)담당자 휴대폰번호(invoiceeHP1)로 전송
+        # - 전송시 포인트가 차감되며 전송실패하는 경우 포인트 환불처리
         invoicerSMSSendYN=False,
 
         ######################################################################
@@ -149,7 +150,7 @@ try:
         invoiceeContactName1="공급받는자 담당자",
 
         # 공급받는자 담당자 메일주소
-        invoiceeEmail1="kklath@naver.com",
+        invoiceeEmail1="test@test.com",
 
         # 공급받는자 연락처
         invoiceeTEL1="070-111-222",
@@ -159,9 +160,6 @@ try:
 
         # 공급받는자 담당자 팩스번호
         invoiceeFAX1="070-4304-2991",
-
-        # 역발행 요청시 안내문자 전송여부
-        invoiceeSMSSendYN=False,
 
         ######################################################################
         #                          세금계산서 기재정보
@@ -235,7 +233,7 @@ try:
     taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
-            purchaseDT="20190116",  # 거래일자, yyyyMMdd
+            purchaseDT="20190115",  # 거래일자, yyyyMMdd
             itemName="품목1",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량
@@ -249,7 +247,7 @@ try:
     taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
-            purchaseDT="20190116",  # 거래일자, yyyyMMdd
+            purchaseDT="20190115",  # 거래일자, yyyyMMdd
             itemName="품목2",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량

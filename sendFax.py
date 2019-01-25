@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -16,7 +19,7 @@ taxinvoiceService.IsTest = testValue.IsTest
 '''
 전자세금계산서를 팩스전송합니다.
 - 팩스 전송 요청시 포인트가 차감됩니다. (전송실패시 환불처리)
-- 전송내역 확인은 "팝빌 로그인" > [문자 팩스] > [팩스] > [전송내역] 메뉴에서 전송결과를 확인할 수 있습니다.
+- 전송내역 확인은 [팝빌 로그인] > [문자 팩스] > [팩스] > [전송내역] 메뉴에서 전송결과를 확인할 수 있습니다.
 '''
 
 try:
@@ -41,7 +44,7 @@ try:
     UserID = testValue.testUserID
 
     result = taxinvoiceService.sendFax(CorpNum, MgtKeyType, MgtKey, Sender, Receiver, UserID)
-    print("처리결과 : [%d] %s" % (result.code,result.message))
+    print("처리결과 : [%d] %s" % (result.code, result.message))
 
 except PopbillException as PE:
-    print("Popbill Exception : [%d] %s" % (PE.code , PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

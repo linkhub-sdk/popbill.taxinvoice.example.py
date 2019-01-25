@@ -16,6 +16,10 @@ from popbill import CorpInfo, TaxinvoiceService, PopbillException
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
+'''
+연동회원의 회사 정보를 수정합니다.
+'''
+
 try:
     print("=" * 15 + " 회사정보 수정 " + "=" * 15)
 

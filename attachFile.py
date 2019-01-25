@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -25,7 +28,7 @@ try:
     # 팝빌회원 아이디
     CorpNum = testValue.testCorpNum
 
-    # 세금계산서 발행유령, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
+    # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "SELL"
 
     # 문서관리번호
@@ -39,6 +42,6 @@ try:
 
     result = taxinvoiceService.attachFile(CorpNum, MgtKeyType, MgtKey, FilePath, UserID)
 
-    print("처리결과 : [%d] %s" % (result.code,result.message))
+    print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:
-    print("Popbill Exception : [%d] %s" % (PE.code , PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

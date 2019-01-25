@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -38,6 +41,6 @@ try:
 
     result = taxinvoiceService.assignMgtKey(CorpNum, MgtKeyType, ItemKey, MgtKey, UserID)
 
-    print("처리결과 : [%d] %s" % (result.code,result.message))
+    print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:
-    print("Popbill Exception : [%d] %s" % (PE.code , PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

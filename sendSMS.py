@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -16,7 +19,7 @@ taxinvoiceService.IsTest = testValue.IsTest
 '''
 알림문자를 전송합니다. (단문/SMS- 한글 최대 45자)
 - 알림문자 전송시 포인트가 차감됩니다. (전송실패시 환불처리)
-- 전송내역 확인은 "팝빌 로그인" > [문자 팩스] > [문자] > [전송내역] 메뉴에서 전송결과를 확인할 수 있습니다.
+- 전송내역 확인은 [팝빌 로그인] > [문자 팩스] > [문자] > [전송내역] 메뉴에서 전송결과를 확인할 수 있습니다.
 '''
 
 try:
@@ -37,16 +40,16 @@ try:
     # 수신번호
     Receiver = "010-8349-0706"
 
-    # 메시지 내용, 최대 90byte 초과시 길이가 조정되어 전송됨
+    # 메시지 내용, 최대 90byte 초과시 초과된 내용은 삭제되어 전송
     Contents = "발신문자 내용"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID
 
     result = taxinvoiceService.sendSMS(CorpNum, MgtKeyType, MgtKey, Sender, Receiver,
-        Contents, UserID)
+                                       Contents, UserID)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 
 except PopbillException as PE:
-    print("Popbill Exception : [%d] %s" % (PE.code , PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

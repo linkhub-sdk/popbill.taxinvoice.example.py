@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -15,8 +18,7 @@ taxinvoiceService.IsTest = testValue.IsTest
 
 '''
 검색조건을 사용하여 세금계산서 목록을 조회합니다.
-- 응답항목에 대한 자세한 사항은 "[전자세금계산서 API 연동매뉴얼] > 4.2. (세금)계산서 상태정보 구성"
-  을 참조하시기 바랍니다.
+- 응답항목에 대한 자세한 사항은 "[전자세금계산서 API 연동매뉴얼] > 3.5.4 Search (목록 조회)" 를 참조하시기 바랍니다.
 '''
 
 try:
@@ -41,6 +43,7 @@ try:
     EDate = "20190108"
 
     # 세금계산서 상태코드 배열, 2,3번째 자리에 와일드카드(*) 사용가능
+    # 상태코드에 대한 자세한 사항은 "[전자세금계산서 API 연동매뉴얼] > 5.1 세금계산서 상태코드" 를 참조하시기 바랍니다.
     State = ["1**", "3**", "6**"]
 
     # 문서유형 배열, N-일반 세금계산서, M-수정 세금계산서
@@ -80,9 +83,9 @@ try:
     InterOPYN = ""
 
     response = taxinvoiceService.search(CorpNum, MgtKeyType, DType,
-                SDate, EDate, State, Type, TaxType, LateOnly, TaxRegIDYN,
-                TaxRegIDType, TaxRegID, Page, PerPage, Order, UserID,
-                QString, InterOPYN, IssueType)
+                                        SDate, EDate, State, Type, TaxType, LateOnly, TaxRegIDYN,
+                                        TaxRegIDType, TaxRegID, Page, PerPage, Order, UserID,
+                                        QString, InterOPYN, IssueType)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
@@ -92,8 +95,8 @@ try:
     print("pageCount (페이지 개수) : %s \n" % response.pageCount)
 
     i = 1
-    for info in response.list :
-        print("====== 세금계산서 상태/요약 정보 [%d] ======" % i)
+    for info in response.list:
+        print("====== 세금계산서 상태정보 구성 [%d] ======" % i)
         for key, value in info.__dict__.items():
             print("%s : %s" % (key, value))
         i += 1
@@ -101,4 +104,4 @@ try:
 
 
 except PopbillException as PE:
-    print("Popbill Exception : [%d] %s" % (PE.code , PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))
