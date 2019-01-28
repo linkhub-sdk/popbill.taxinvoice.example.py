@@ -94,14 +94,37 @@ try:
     print("pageNum (페에지 번호) : %s " % response.pageNum)
     print("pageCount (페이지 개수) : %s \n" % response.pageCount)
 
-    i = 1
     for info in response.list:
-        print("====== 세금계산서 상태정보 구성 [%d] ======" % i)
-        for key, value in info.__dict__.items():
-            print("%s : %s" % (key, value))
-        i += 1
-        print("\n")
-
+        print("stateCode (상태코드) : %s " % info.stateCode)
+        print("taxType (과세형태) : %s " % info.taxType)
+        print("purposeType (영수/청구) : %s " % info.purposeType)
+        print("modifyCode (수정 사유코드) : %s " % info.modifyCode)
+        print("issueType (발행형태) : %s " % info.issueType)
+        print("lateIssueYN (지연발행 여부) : %s " % info.lateIssueYN)
+        print("interOPYN (연동문서 여부) : %s " % info.interOPYN)
+        print("writeDate (작성일자) : %s " % info.writeDate)
+        print("invoicerCorpName (공급자 상호) : %s " % info.invoicerCorpName)
+        print("invoicerCorpNum (공급자 사업자번호) : %s " % info.invoicerCorpNum)
+        print("invoicerMgtKey (공급자 문서관리번호) : %s " % info.invoicerMgtKey)
+        print("invoicerPrintYN (공급자 인쇄여부) : %s " % info.invoicerPrintYN)
+        print("invoiceeCorpName (공급받는자 상호) : %s " % info.invoiceeCorpName)
+        print("invoiceeCorpNum (공급받는자 사업자번호) : %s " % info.invoiceeCorpNum)
+        print("invoiceeMgtKey (공급받는자 문서관리번호) : %s " % info.invoiceeMgtKey)
+        print("invoiceePrintYN (공급받는자 인쇄여부) : %s " % info.invoiceePrintYN)
+        print("closeDownState (공급받는자 휴폐업상태) : %s " % info.closeDownState)
+        print("closeDownStateDate (공급받는자 휴폐업일자) : %s " % info.closeDownStateDate)
+        print("supplyCostTotal (공급가액 합계) : %s " % info.supplyCostTotal)
+        print("taxTotal (세액 합계) : %s " % info.taxTotal)
+        print("issueDT (발행 일시) : %s " % info.issueDT)
+        print("stateDT (상태변경일시) : %s " % info.stateDT)
+        print("openYN (개봉 여부) : %s " % info.openYN)
+        print("openDT (개봉 일시) : %s " % info.openDT)
+        print("ntsresult (국세청 전송결과) : %s " % info.ntsresult)
+        print("ntsconfirmNum (국세청승인번호) : %s " % info.ntsconfirmNum)
+        print("ntssendDT (국세청 전송일시) : %s " % info.ntssendDT)
+        print("ntsresultDT (국세청 결과 수신일시) : %s " % info.ntsresultDT)
+        print("ntssendErrCode (전송실패 사유코드) : %s " % info.ntssendErrCode)
+        print("stateMemo (상태메모) : %s " % info.stateMemo) + "\n"
 
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

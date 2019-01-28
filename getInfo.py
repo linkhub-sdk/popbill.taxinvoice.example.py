@@ -36,11 +36,35 @@ try:
 
     taxinvoiceInfo = taxinvoiceService.getInfo(CorpNum, MgtKeyType, MgtKey)
 
-    # 상태정보를 표시하기 위해 임의로 작성한 코드.
-    # 실제 변수처리시에는 taxinvoiceInfo.stateCode, taxinvoiceInfo.openYN등으로 처리가능
-    for key, value in taxinvoiceInfo.__dict__.items():
-        if not key.startswith("__"):
-            print("%s : %s" % (key, value))
-
+    print("stateCode (상태코드) : %s " % taxinvoiceInfo.stateCode)
+    print("taxType (과세형태) : %s " % taxinvoiceInfo.taxType)
+    print("purposeType (영수/청구) : %s " % taxinvoiceInfo.purposeType)
+    print("modifyCode (수정 사유코드) : %s " % taxinvoiceInfo.modifyCode)
+    print("issueType (발행형태) : %s " % taxinvoiceInfo.issueType)
+    print("lateIssueYN (지연발행 여부) : %s " % taxinvoiceInfo.lateIssueYN)
+    print("interOPYN (연동문서 여부) : %s " % taxinvoiceInfo.interOPYN)
+    print("writeDate (작성일자) : %s " % taxinvoiceInfo.writeDate)
+    print("invoicerCorpName (공급자 상호) : %s " % taxinvoiceInfo.invoicerCorpName)
+    print("invoicerCorpNum (공급자 사업자번호) : %s " % taxinvoiceInfo.invoicerCorpNum)
+    print("invoicerMgtKey (공급자 문서관리번호) : %s " % taxinvoiceInfo.invoicerMgtKey)
+    print("invoicerPrintYN (공급자 인쇄여부) : %s " % taxinvoiceInfo.invoicerPrintYN)
+    print("invoiceeCorpName (공급받는자 상호) : %s " % taxinvoiceInfo.invoiceeCorpName)
+    print("invoiceeCorpNum (공급받는자 사업자번호) : %s " % taxinvoiceInfo.invoiceeCorpNum)
+    print("invoiceeMgtKey (공급받는자 문서관리번호) : %s " % taxinvoiceInfo.invoiceeMgtKey)
+    print("invoiceePrintYN (공급받는자 인쇄여부) : %s " % taxinvoiceInfo.invoiceePrintYN)
+    print("closeDownState (공급받는자 휴폐업상태) : %s " % taxinvoiceInfo.closeDownState)
+    print("closeDownStateDate (공급받는자 휴폐업일자) : %s " % taxinvoiceInfo.closeDownStateDate)
+    print("supplyCostTotal (공급가액 합계) : %s " % taxinvoiceInfo.supplyCostTotal)
+    print("taxTotal (세액 합계) : %s " % taxinvoiceInfo.taxTotal)
+    print("issueDT (발행 일시) : %s " % taxinvoiceInfo.issueDT)
+    print("stateDT (상태변경일시) : %s " % taxinvoiceInfo.stateDT)
+    print("openYN (개봉 여부) : %s " % taxinvoiceInfo.openYN)
+    print("openDT (개봉 일시) : %s " % taxinvoiceInfo.openDT)
+    print("ntsresult (국세청 전송결과) : %s " % taxinvoiceInfo.ntsresult)
+    print("ntsconfirmNum (국세청승인번호) : %s " % taxinvoiceInfo.ntsconfirmNum)
+    print("ntssendDT (국세청 전송일시) : %s " % taxinvoiceInfo.ntssendDT)
+    print("ntsresultDT (국세청 결과 수신일시) : %s " % taxinvoiceInfo.ntsresultDT)
+    print("ntssendErrCode (전송실패 사유코드) : %s " % taxinvoiceInfo.ntssendErrCode)
+    print("stateMemo (상태메모) : %s " % taxinvoiceInfo.stateMemo) + "\n"
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))
