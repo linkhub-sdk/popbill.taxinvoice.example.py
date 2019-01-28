@@ -19,7 +19,7 @@ taxinvoiceService.IsTest = testValue.IsTest
 '''
 연동회원의 담당자 목록을 확인합니다.
 '''
-ㅌ
+
 try:
     print("=" * 15 + " 담당자 목록 확인 " + "=" * 15)
 
