@@ -28,8 +28,11 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 세금계산서 문서관리번호
-    mgtKey = "20190115-001"
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    # 세금계산서 문서관리번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
+    MgtKey = "20190108-002"
 
     # 지연발행 강제여부
     # 발행마감일이 지난 세금계산서를 발행하는 경우, 가산세가 부과될 수 있습니다.
@@ -47,9 +50,6 @@ try:
 
     # 발행안내 메일 제목, 미기재시 기본양식으로 전송
     emailSubject = ""
-
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
 
     # 세금계산서 정보
     taxinvoice = Taxinvoice(

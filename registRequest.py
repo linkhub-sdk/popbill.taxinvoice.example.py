@@ -33,6 +33,9 @@ try:
     # 팝빌회원 아이디
     UserID = testValue.testUserID
 
+    # 세금계산서 문서관리번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
+    MgtKey = "20190108-003"
+
     # 세금계산서 정보
     taxinvoice = Taxinvoice(
 
@@ -114,7 +117,7 @@ try:
 
         # [역발행시 필수] 공급받는자 문서관리번호, 1~24자리 (숫자, 영문, '-', '_') 조합으로
         # 사업자별로 중복되지 않도록 구성
-        invoiceeMgtKey="20190115-1010",
+        invoiceeMgtKey=MgtKey,
 
         # [필수] 공급받는자 대표자 성명
         invoiceeCEOName="공급받는자 대표자 성명",

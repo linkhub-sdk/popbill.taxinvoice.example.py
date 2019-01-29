@@ -35,7 +35,7 @@ try:
     tmp += "chargeMethod (과금유형) : " + response.chargeMethod + "\n"
     tmp += "rateSystem (과금제도) : " + response.rateSystem
 
-    print(tmp);
+    print(tmp)
 
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

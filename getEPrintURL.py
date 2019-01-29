@@ -27,7 +27,7 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 세금계산서 발행유형 , SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
+    # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "SELL"
 
     # 문서 관리번호

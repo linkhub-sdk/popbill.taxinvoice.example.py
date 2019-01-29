@@ -17,11 +17,11 @@ taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 
 '''
-대용량 연계사업자 메일주소 목록을 반환합니다.
+유통사업자 메일 목록 확인
 '''
 
 try:
-    print("=" * 15 + " 대용량사업자 유통 메일 주소 " + "=" * 15)
+    print("=" * 15 + " 유통사업자 메일 목록 확인 " + "=" * 15)
 
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
@@ -29,7 +29,8 @@ try:
     aspList = taxinvoiceService.getEmailPublicKeys(CorpNum)
 
     for asp in aspList:
-        print("인증번호[%s] : %s" % (asp.confirmNum, asp.email))
+        print("유통사업자 승인번호[%s]" % asp.confirmNum)
+        print("유통사업자 이메일[%s]" % asp.email + '\n')
 
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

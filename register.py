@@ -20,8 +20,7 @@ taxinvoiceService.IsTest = testValue.IsTest
 1건의 세금계산서를 임시저장 합니다.
 - 세금계산서 임시저장(Register API) 호출후에는 발행(Issue API)을 호출해야만 국세청으로 전송됩니다.
 - 임시저장과 발행을 한번의 호출로 처리하는 즉시발행(RegistIssue API) 프로세스 연동을 권장합니다.
-- 세금계산서 항목별 정보는 "[전자세금계산서 API 연동매뉴얼] > 4.1. (세금)계산서 구성"을
-  참조하시기 바랍니다.
+- 세금계산서 항목별 정보는 "[전자세금계산서 API 연동매뉴얼] > 4.1. (세금)계산서 구성"을 참조하시기 바랍니다.
 '''
 
 try:
@@ -30,14 +29,14 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
     # 세금계산서 문서관리번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
     MgtKey = "20190108-002"
 
     # 거래명세서 동시작성여부
     writeSpecification = False
-
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
 
     # 세금계산서 정보
     taxinvoice = Taxinvoice(

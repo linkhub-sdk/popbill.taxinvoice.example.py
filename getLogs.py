@@ -40,6 +40,7 @@ try:
         print("log (이력정보) : %s" % f.log)
         print("procType (처리형태) : %s" % f.procType)
         print("procCorpName (처리회사명) : %s" % f.procCorpName)
+        print("procContactName (처리담당자) : %s" % f.procContactName)
         print("procMemo (처리메모) : %s" % f.procMemo)
         print("regDT (등록일시) : %s" % f.regDT)
         print("ip (아이피) : %s" % f.ip)

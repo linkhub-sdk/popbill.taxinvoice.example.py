@@ -26,6 +26,9 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
     # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "SELL"
 
@@ -34,9 +37,6 @@ try:
 
     # 메모
     Memo = "역발행 요청 메모"
-
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
 
     result = taxinvoiceService.request(CorpNum, MgtKeyType, MgtKey, Memo, UserID)
 
