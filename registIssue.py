@@ -87,7 +87,7 @@ try:
         invoicerCorpName="공급자 상호",
 
         # 공급자 문서관리번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
-        invoicerMgtKey=mgtKey,
+        invoicerMgtKey=MgtKey,
 
         # 공급자 대표자 성명
         invoicerCEOName="공급자 대표자 성명",

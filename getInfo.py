@@ -36,6 +36,7 @@ try:
 
     taxinvoiceInfo = taxinvoiceService.getInfo(CorpNum, MgtKeyType, MgtKey)
 
+    print("세금계산서 정보>")
     print("itemKey (팝빌 관리번호) : %s " % taxinvoiceInfo.itemKey)
     print("taxType (과세형태) : %s " % taxinvoiceInfo.taxType)
     print("writeDate (작성일자) : %s " % taxinvoiceInfo.writeDate)
@@ -57,6 +58,8 @@ try:
     print("ntssendErrCode (전송실패 사유코드) : %s " % taxinvoiceInfo.ntssendErrCode)
     print("modifyCode (수정 사유코드) : %s " % taxinvoiceInfo.modifyCode)
     print("interOPYN (연동문서 여부) : %s " % taxinvoiceInfo.interOPYN)
+
+    print("\n공급자, 공급받는자, 수탁자 정보>")
     print("invoicerCorpName (공급자 상호) : %s " % taxinvoiceInfo.invoicerCorpName)
     print("invoicerCorpNum (공급자 사업자번호) : %s " % taxinvoiceInfo.invoicerCorpNum)
     print("invoicerMgtKey (공급자 문서관리번호) : %s " % taxinvoiceInfo.invoicerMgtKey)

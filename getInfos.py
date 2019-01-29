@@ -42,6 +42,8 @@ try:
     InfoList = taxinvoiceService.getInfos(CorpNum, MgtKeyType, MgtKeyList)
 
     for info in InfoList:
+
+        print("\n======세금계산서 정보======>")
         print("itemKey (팝빌 관리번호) : %s " % info.itemKey)
         print("taxType (과세형태) : %s " % info.taxType)
         print("writeDate (작성일자) : %s " % info.writeDate)
@@ -63,6 +65,8 @@ try:
         print("ntssendErrCode (전송실패 사유코드) : %s " % info.ntssendErrCode)
         print("modifyCode (수정 사유코드) : %s " % info.modifyCode)
         print("interOPYN (연동문서 여부) : %s " % info.interOPYN)
+
+        print("\n공급자, 공급받는자, 수탁자 정보>")
         print("invoicerCorpName (공급자 상호) : %s " % info.invoicerCorpName)
         print("invoicerCorpNum (공급자 사업자번호) : %s " % info.invoicerCorpNum)
         print("invoicerMgtKey (공급자 문서관리번호) : %s " % info.invoicerMgtKey)
