@@ -67,7 +67,7 @@ try:
     print("invoiceeCorpName (공급받는자 상호) : %s " % taxinvoiceInfo.invoiceeCorpName)
     print("invoiceeCorpNum (공급받는자 사업자번호) : %s " % taxinvoiceInfo.invoiceeCorpNum)
     print("invoiceePrintYN (공급받는자 인쇄여부) : %s " % taxinvoiceInfo.invoiceePrintYN)
-    print("closeDownState (공급받는자 휴패업상태) : %s " % taxinvoiceInfo.closeDownState)
+    print("closeDownState (공급받는자 휴폐업상태) : %s " % taxinvoiceInfo.closeDownState)
     print("closeDownStateDate (공급받는자 휴폐업일자) : %s " % taxinvoiceInfo.closeDownStateDate)
     print("trusteeCorpName (수탁자 상호) : %s " % taxinvoiceInfo.trusteeCorpName)
     print("trusteeCorpNum (수탁자 사업자번호) : %s " % taxinvoiceInfo.trusteeCorpNum)
