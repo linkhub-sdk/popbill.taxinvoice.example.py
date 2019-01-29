@@ -55,7 +55,7 @@ try:
     print("note (어음) : %s " % taxinvoice.note)
     print("remark1 (비고1) : %s " % taxinvoice.remark1)
     print("remark2 (비고2) : %s " % taxinvoice.remark2)
-    print("remakr3 (비고3) : %s " % taxinvoice.remark3)
+    print("remark3 (비고3) : %s " % taxinvoice.remark3)
     print("invoicerMgtKey (공급자 관리번호) : %s " % taxinvoice.invoicerMgtKey)
     print("invoicerCorpNum (공급자 사업자번호) : %s " % taxinvoice.invoicerCorpNum)
     print("invoicerTaxRegID (공급자 종사업장 식별번호) : %s " % taxinvoice.invoicerTaxRegID)

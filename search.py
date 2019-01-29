@@ -109,7 +109,7 @@ try:
         print("openDT (개봉 일시) : %s " % info.openDT)
         print("stateMemo (상태메모) : %s " % info.stateMemo)
         print("stateCode (상태코드) : %s " % info.stateCode)
-        print("nstconfirmNum (국세청승인번호) : %s " % info.ntsconfirmNum)
+        print("ntsconfirmNum (국세청승인번호) : %s " % info.ntsconfirmNum)
         print("ntsresult (국세청 전송결과) : %s " % info.ntsresult)
         print("ntssendDT (국세청 전송일시) : %s " % info.ntssendDT)
         print("ntsresultDT (국세청 결과 수신일시) : %s " % info.ntsresultDT)
