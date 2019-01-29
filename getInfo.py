@@ -51,7 +51,7 @@ try:
     print("openDT (개봉 일시) : %s " % taxinvoiceInfo.openDT)
     print("stateMemo (상태메모) : %s " % taxinvoiceInfo.stateMemo)
     print("stateCode (상태코드) : %s " % taxinvoiceInfo.stateCode)
-    print("nstconfirmNum (국세청승인번호) : %s " % taxinvoiceInfo.ntsconfirmNum)
+    print("ntsconfirmNum (국세청승인번호) : %s " % taxinvoiceInfo.ntsconfirmNum)
     print("ntsresult (국세청 전송결과) : %s " % taxinvoiceInfo.ntsresult)
     print("ntssendDT (국세청 전송일시) : %s " % taxinvoiceInfo.ntssendDT)
     print("ntsresultDT (국세청 결과 수신일시) : %s " % taxinvoiceInfo.ntsresultDT)

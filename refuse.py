@@ -30,7 +30,7 @@ try:
     MgtKey = "20190108-001"
 
     # 메모
-    Memo = "발행 메모"
+    Memo = "역발행 거부 메모"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID
