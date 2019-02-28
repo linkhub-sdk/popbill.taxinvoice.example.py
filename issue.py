@@ -30,7 +30,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서관리번호
-    MgtKey = "20190108-001"
+    MgtKey = "20190228-002"
 
     # 메모
     Memo = "발행 메모"
@@ -51,5 +51,6 @@ try:
                                      EmailSubject, ForceIssue, UserID)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
+    print("국세청승인번호 : %s" % (result.ntsConfirmNum))
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))
