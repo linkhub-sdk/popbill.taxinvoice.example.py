@@ -15,6 +15,7 @@ from popbill import TaxinvoiceService, PopbillException
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
+taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 1건의 전자세금계산서를 삭제합니다.

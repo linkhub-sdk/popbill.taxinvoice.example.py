@@ -15,6 +15,7 @@ from popbill import TaxinvoiceService, PopbillException
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
+taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 세금계산서에 첨부된 파일의 목록을 확인합니다.

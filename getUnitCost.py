@@ -15,6 +15,7 @@ from popbill import TaxinvoiceService, PopbillException
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
+taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 전자세금계산서 발행단가를 확인합니다.

@@ -12,6 +12,7 @@ from popbill import TaxinvoiceService, PopbillException
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
+taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 세금계산서 상태 변경이력을 확인합니다.

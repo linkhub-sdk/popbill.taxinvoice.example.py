@@ -15,6 +15,7 @@ from popbill import JoinForm, TaxinvoiceService, PopbillException
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
+taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 try:
     print("=" * 15 + " 연동회원 가입요청 " + "=" * 15)

@@ -12,6 +12,7 @@ from popbill import TaxinvoiceService, PopbillException
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
+taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 공급받는자에게 요청받은 역발행 세금계산서를 [거부]처리 합니다.
