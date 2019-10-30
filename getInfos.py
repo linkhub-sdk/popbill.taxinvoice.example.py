@@ -33,7 +33,7 @@ try:
     # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "SELL"
 
-    # 문서관리번호 배열, 최대 1000건
+    # 문서번호 배열, 최대 1000건
     MgtKeyList = []
     MgtKeyList.append("20190116-001")
     MgtKeyList.append("20190116-002")
@@ -70,7 +70,7 @@ try:
         print("\n공급자, 공급받는자, 수탁자 정보>")
         print("invoicerCorpName (공급자 상호) : %s " % info.invoicerCorpName)
         print("invoicerCorpNum (공급자 사업자번호) : %s " % info.invoicerCorpNum)
-        print("invoicerMgtKey (공급자 문서관리번호) : %s " % info.invoicerMgtKey)
+        print("invoicerMgtKey (공급자 문서번호) : %s " % info.invoicerMgtKey)
         print("invoicerPrintYN (공급자 인쇄여부) : %s " % info.invoicerPrintYN)
         print("invoiceeCorpName (공급받는자 상호) : %s " % info.invoiceeCorpName)
         print("invoiceeCorpNum (공급받는자 사업자번호) : %s " % info.invoiceeCorpNum)
@@ -79,7 +79,7 @@ try:
         print("closeDownStateDate (공급받는자 휴폐업일자) : %s " % info.closeDownStateDate)
         print("trusteeCorpName (수탁자 상호) : %s " % info.trusteeCorpName)
         print("trusteeCorpNum (수탁자 사업자번호) : %s " % info.trusteeCorpNum)
-        print("trusteeMgtKey (수탁자 문서관리번호) : %s " % info.trusteeMgtKey)
+        print("trusteeMgtKey (수탁자 문서번호) : %s " % info.trusteeMgtKey)
         print("trusteePrintYN (수탁자 인쇄여부) : %s " % info.trusteePrintYN) + "\n"
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

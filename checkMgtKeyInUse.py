@@ -23,7 +23,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 
 try:
-    print("=" * 15 + " 세금계산서 문서관리번호 사용여부 확인 " + "=" * 15)
+    print("=" * 15 + " 세금계산서 문서번호 사용여부 확인 " + "=" * 15)
 
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
@@ -31,11 +31,11 @@ try:
     # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "SELL"
 
-    # 문서관리번호, 1~24자리, 영문,숫자,-,_ 조합으로 사업자별로 중복되지 않도록 구성
+    # 문서번호, 1~24자리, 영문,숫자,-,_ 조합으로 사업자별로 중복되지 않도록 구성
     MgtKey = "20190108-001"
 
     keyInUse = taxinvoiceService.checkMgtKeyInUse(CorpNum, MgtKeyType, MgtKey)
 
-    print("문서관리번호 사용여부 : 사용중" if keyInUse else "문서관리번호 사용여부 : 미사용중")
+    print("문서번호 사용여부 : 사용중" if keyInUse else "문서번호 사용여부 : 미사용중")
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

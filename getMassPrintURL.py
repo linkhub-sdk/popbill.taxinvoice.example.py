@@ -31,7 +31,7 @@ try:
     # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "SELL"
 
-    # 인쇄할 문서관리번호 배열, 최대 100건
+    # 인쇄할 문서번호 배열, 최대 100건
     MgtKeyList = []
     MgtKeyList.append("20190116-01")
     MgtKeyList.append("20190116-02")

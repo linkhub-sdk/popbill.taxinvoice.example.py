@@ -19,7 +19,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 공급받는자가 역발행 세금계산서의 발행요청을 [취소] 합니다.
-- [취소]한 세금계산서의 문서관리번호를 재사용하기 위해서는 삭제 (Delete API) 를 호출해야 합니다.
+- [취소]한 세금계산서의 문서번호를 재사용하기 위해서는 삭제 (Delete API) 를 호출해야 합니다.
 '''
 
 try:
@@ -31,7 +31,7 @@ try:
     # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "BUY"
 
-    # 문서관리번호
+    # 문서번호
     MgtKey = "20190108-001"
 
     # 메모

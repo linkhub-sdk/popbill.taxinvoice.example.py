@@ -32,7 +32,7 @@ try:
     # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "SELL"
 
-    # 문서관리번호
+    # 문서번호
     MgtKey = "20190116-001"
 
     taxinvoiceInfo = taxinvoiceService.getInfo(CorpNum, MgtKeyType, MgtKey)
@@ -63,7 +63,7 @@ try:
     print("\n공급자, 공급받는자, 수탁자 정보>")
     print("invoicerCorpName (공급자 상호) : %s " % taxinvoiceInfo.invoicerCorpName)
     print("invoicerCorpNum (공급자 사업자번호) : %s " % taxinvoiceInfo.invoicerCorpNum)
-    print("invoicerMgtKey (공급자 문서관리번호) : %s " % taxinvoiceInfo.invoicerMgtKey)
+    print("invoicerMgtKey (공급자 문서번호) : %s " % taxinvoiceInfo.invoicerMgtKey)
     print("invoicerPrintYN (공급자 인쇄여부) : %s " % taxinvoiceInfo.invoicerPrintYN)
     print("invoiceeCorpName (공급받는자 상호) : %s " % taxinvoiceInfo.invoiceeCorpName)
     print("invoiceeCorpNum (공급받는자 사업자번호) : %s " % taxinvoiceInfo.invoiceeCorpNum)
@@ -72,7 +72,7 @@ try:
     print("closeDownStateDate (공급받는자 휴폐업일자) : %s " % taxinvoiceInfo.closeDownStateDate)
     print("trusteeCorpName (수탁자 상호) : %s " % taxinvoiceInfo.trusteeCorpName)
     print("trusteeCorpNum (수탁자 사업자번호) : %s " % taxinvoiceInfo.trusteeCorpNum)
-    print("trusteeMgtKey (수탁자 문서관리번호) : %s " % taxinvoiceInfo.trusteeMgtKey)
+    print("trusteeMgtKey (수탁자 문서번호) : %s " % taxinvoiceInfo.trusteeMgtKey)
     print("trusteePrintYN (수탁자 인쇄여부) : %s " % taxinvoiceInfo.trusteePrintYN) + "\n"
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

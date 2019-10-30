@@ -32,7 +32,7 @@ try:
     # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "SELL"
 
-    # 문서관리번호
+    # 문서번호
     MgtKey = "20190108-002"
 
     # 파일경로

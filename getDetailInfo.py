@@ -32,7 +32,7 @@ try:
     # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "SELL"
 
-    # 문서 관리번호
+    # 문서번호
     MgtKey = "20190116-001"
 
     taxinvoice = taxinvoiceService.getDetailInfo(CorpNum, MgtKeyType, MgtKey)
@@ -70,7 +70,7 @@ try:
     print("invoicerHP (담당자 휴대폰) : %s " % taxinvoice.invoicerHP)
     print("invoicerEmail (담당자 이메일) : %s " % taxinvoice.invoicerEmail)
     print("invoicerSMSSendYN (문자전송 여부) : %s " % taxinvoice.invoicerSMSSendYN)
-    print("invoiceeMgtKey (공급받는자 문서관리번호) : %s " % taxinvoice.invoiceeMgtKey)
+    print("invoiceeMgtKey (공급받는자 문서번호) : %s " % taxinvoice.invoiceeMgtKey)
     print("invoiceeType (공급받는자 구분) : %s " % taxinvoice.invoiceeType)
     print("invoiceeCorpNum (공급받는자 사업자번호) : %s " % taxinvoice.invoiceeCorpNum)
     print("invoiceeTaxRegID (공급받는자 종사업장 식별번호) : %s " % taxinvoice.invoiceeTaxRegID)

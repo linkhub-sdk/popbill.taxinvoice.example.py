@@ -119,7 +119,7 @@ try:
         print("interOPYN (연동문서 여부) : %s " % info.interOPYN)
         print("invoicerCorpName (공급자 상호) : %s " % info.invoicerCorpName)
         print("invoicerCorpNum (공급자 사업자번호) : %s " % info.invoicerCorpNum)
-        print("invoicerMgtKey (공급자 문서관리번호) : %s " % info.invoicerMgtKey)
+        print("invoicerMgtKey (공급자 문서번호) : %s " % info.invoicerMgtKey)
         print("invoicerPrintYN (공급자 인쇄여부) : %s " % info.invoicerPrintYN)
         print("invoiceeCorpName (공급받는자 상호) : %s " % info.invoiceeCorpName)
         print("invoiceeCorpNum (공급받는자 사업자번호) : %s " % info.invoiceeCorpNum)
@@ -128,7 +128,7 @@ try:
         print("closeDownStateDate (공급받는자 휴폐업일자) : %s " % info.closeDownStateDate)
         print("trusteeCorpName (수탁자 상호) : %s " % info.trusteeCorpName)
         print("trusteeCorpNum (수탁자 사업자번호) : %s " % info.trusteeCorpNum)
-        print("trusteeMgtKey (수탁자 문서관리번호) : %s " % info.trusteeMgtKey)
+        print("trusteeMgtKey (수탁자 문서번호) : %s " % info.trusteeMgtKey)
         print("trusteePrintYN (수탁자 인쇄여부) : %s " % info.trusteePrintYN) + "\n"
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))
