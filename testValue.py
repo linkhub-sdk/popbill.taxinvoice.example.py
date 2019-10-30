@@ -3,8 +3,8 @@
 '''
  팝빌 전자세금계산서 API Python SDK Example
 
- - Python SDK 연동환경 설정방법 안내 : http://blog.linkhub.co.kr/581
- - 업데이트 일자 : 2019-09-16
+ - Python SDK 연동환경 설정방법 안내 : https://docs.popbill.com/taxinvoice/sdk?lang=python
+ - 업데이트 일자 : 2019-10-25
  - 연동 기술지원 연락처 : 1600-9854 / 070-4304-2991
  - 연동 기술지원 이메일 : code@linkhub.co.kr
 
