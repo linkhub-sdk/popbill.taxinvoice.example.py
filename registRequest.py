@@ -211,8 +211,8 @@ try:
         # 수정사유코드
         modifyCode=None,
 
-        # 원본 세금계산서 ItemKey, 문서확인 (GetInfo API)의 응답결과(ItemKey 항목) 확인.
-        originalTaxinvoiceKey=None
+        # 원본세금계산서 국세청승인번호 기재
+        orgNTSConfirmNum=None
     )
 
     ######################################################################

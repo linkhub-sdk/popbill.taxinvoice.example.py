@@ -214,8 +214,8 @@ try:
         # 수정사유코드
         modifyCode=None,
 
-        # 원본 세금계산서 ItemKey
-        originalTaxinvoiceKey=None
+        # 원본세금계산서 국세청승인번호 기재
+        orgNTSConfirmNum=None
     )
 
     ######################################################################
