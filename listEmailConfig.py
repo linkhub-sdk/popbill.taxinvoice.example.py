@@ -19,6 +19,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 전자세금계산서 관련 메일전송 항목에 대한 전송여부를 목록으로 반환합니다
+- https://docs.popbill.com/taxinvoice/python/api#ListEmailConfig
 '''
 
 try:

@@ -19,6 +19,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 파트너의 연동회원으로 가입된 사업자 번호인지 확안합니다.
+- https://docs.popbill.com/taxinvoice/python/api#CheckIsMember
 '''
 
 try:

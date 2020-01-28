@@ -20,6 +20,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 팝빌 전자세금계산서 관련 문서함 팝업 URL을 반환합니다.
 - 보안정책으로 인해 반환된 URL의 유효시간은 30초입니다.
+- https://docs.popbill.com/taxinvoice/python/api#GetURL
 '''
 
 try:

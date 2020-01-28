@@ -17,6 +17,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 공급받는자 메일링크 URL을 반환합니다.
 - 메일링크 URL은 유효시간이 존재하지 않습니다.
+- https://docs.popbill.com/taxinvoice/python/api#GetMailURL
 '''
 
 try:

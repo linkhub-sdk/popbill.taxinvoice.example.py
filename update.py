@@ -19,7 +19,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 [임시저장] 상태의 세금계산서의 항목을 수정합니다.
-- 세금계산서 항목별 정보는 "[전자세금계산서 API 연동매뉴얼] > 4.1. (세금)계산서 구성"을 참조하시기 바랍니다.
+- https://docs.popbill.com/taxinvoice/python/api#Update
 '''
 
 try:

@@ -21,6 +21,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 1건의 전자세금계산서를 삭제합니다.
 - 세금계산서를 삭제해야만 문서번호(mgtKey)를 재사용할 수 있습니다.
 - 삭제가능한 문서 상태 : 임시저장, 발행취소, 역)발행 거부/취소
+- https://docs.popbill.com/taxinvoice/python/api#Delete
 '''
 
 try:

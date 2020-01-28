@@ -19,6 +19,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 연동회원의 담당자를 신규로 등록합니다.
+- https://docs.popbill.com/taxinvoice/python/api#RegistContact
 '''
 
 try:

@@ -21,6 +21,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 세금계산서에 첨부된 파일의 목록을 확인합니다.
 - 응답항목 중 파일아이디(AttachedFile) 항목은 파일삭제(DeleteFile API)
   호출시 이용할 수 있습니다.
+- https://docs.popbill.com/taxinvoice/python/api#GetFiles
 '''
 
 try:

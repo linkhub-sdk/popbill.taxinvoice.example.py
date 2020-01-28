@@ -16,6 +16,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 공급받는자에게 요청받은 역발행 세금계산서를 [거부]처리 합니다.
+- https://docs.popbill.com/taxinvoice/python/api#Refuse
 '''
 
 try:

@@ -20,6 +20,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 다수건의 전자세금계산서 인쇄팝업 URL을 반환합니다. (최대 100건)
 - 반환된 URL은 보안정책에 따라 30초의 유효시간을 갖습니다.
+- https://docs.popbill.com/taxinvoice/python/api#GetMassPrintURL
 '''
 
 try:

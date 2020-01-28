@@ -19,6 +19,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 유통사업자 메일 목록 확인
+- https://docs.popbill.com/taxinvoice/python/api#GetEmailPublicKeys
 '''
 
 try:

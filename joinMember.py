@@ -17,6 +17,11 @@ taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
+'''
+사업자의 연동회원 가입처리를 요청합니다.
+- https://docs.popbill.com/taxinvoice/python/api#JoinMember
+'''
+
 try:
     print("=" * 15 + " 연동회원 가입요청 " + "=" * 15)
 

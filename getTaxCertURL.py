@@ -20,6 +20,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 공인인증서 등록 URL을 반환합니다.
 - 보안정책에 따라 반환된 URL은 30초의 유효시간을 갖습니다.
+- https://docs.popbill.com/taxinvoice/python/api#GetTaxCertURL
 '''
 
 try:

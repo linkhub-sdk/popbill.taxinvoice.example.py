@@ -19,6 +19,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 1건의 전자명세서를 세금계산서에 첨부합니다.
+- https://docs.popbill.com/taxinvoice/python/api#AttachStatement
 '''
 
 try:

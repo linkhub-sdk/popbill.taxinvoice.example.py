@@ -20,6 +20,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 공급받는자가 역발행 세금계산서의 발행요청을 [취소] 합니다.
 - [취소]한 세금계산서의 문서번호를 재사용하기 위해서는 삭제 (Delete API) 를 호출해야 합니다.
+- https://docs.popbill.com/taxinvoice/python/api#CancelRequest
 '''
 
 try:

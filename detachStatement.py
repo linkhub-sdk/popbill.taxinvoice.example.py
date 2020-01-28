@@ -19,6 +19,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 세금계산서에 첨부된 전자명세서 1건을 첨부해제합니다.
+- https://docs.popbill.com/taxinvoice/python/api#DetachStatement
 '''
 
 try:

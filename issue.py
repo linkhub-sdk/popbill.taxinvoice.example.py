@@ -19,6 +19,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 [임시저장] 또는 [발행대기] 상태의 세금계산서를 [공급자]가 [발행]합니다.
+- https://docs.popbill.com/taxinvoice/python/api#TIIssue
 '''
 
 try:

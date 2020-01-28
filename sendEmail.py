@@ -16,6 +16,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 세금계산서 발행 안내메일을 재전송합니다.
+- https://docs.popbill.com/taxinvoice/python/api#SendEmail
 '''
 
 try:
