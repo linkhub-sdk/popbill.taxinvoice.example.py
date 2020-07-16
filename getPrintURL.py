@@ -13,6 +13,7 @@ from popbill import TaxinvoiceService, PopbillException
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
+taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 
 '''
 1건의 전자세금계산서 인쇄팝업 URL을 반환합니다.

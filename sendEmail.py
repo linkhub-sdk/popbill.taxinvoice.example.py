@@ -13,6 +13,7 @@ from popbill import TaxinvoiceService, PopbillException
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
+taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 
 '''
 세금계산서 발행 안내메일을 재전송합니다.

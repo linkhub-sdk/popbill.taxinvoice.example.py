@@ -16,6 +16,7 @@ from popbill import TaxinvoiceService, PopbillException
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
+taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 
 '''
 팝빌 전자세금계산서 관련 문서함 팝업 URL을 반환합니다.

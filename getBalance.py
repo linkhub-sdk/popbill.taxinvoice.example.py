@@ -16,6 +16,7 @@ from popbill import TaxinvoiceService, PopbillException
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
+taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 
 '''
 연동회원의 잔여포인트를 확인합니다.

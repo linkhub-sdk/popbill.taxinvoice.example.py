@@ -16,6 +16,7 @@ from popbill import TaxinvoiceService, PopbillException
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
+taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 
 '''
 팝빌 회원아이디 중복여부를 확인합니다.

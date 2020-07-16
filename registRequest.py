@@ -16,6 +16,7 @@ from popbill import TaxinvoiceService, PopbillException, Taxinvoice, TaxinvoiceD
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
+taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 
 '''
 [공급받는자]가 공급자에게 1건의 역발행 세금계산서를 [즉시 요청]합니다.
