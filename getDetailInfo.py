@@ -33,14 +33,13 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20190116-001"
+    MgtKey = "20200728-01"
 
     taxinvoice = taxinvoiceService.getDetailInfo(CorpNum, MgtKeyType, MgtKey)
 
     print("ntsconfirmNum (국세청승인번호) : %s " % taxinvoice.ntsconfirmNum)
     print("issueType (발행형태) : %s " % taxinvoice.issueType)
     print("taxType (과세형태) : %s " % taxinvoice.taxType)
-    print("issueTiming (발행시점) : %s " % taxinvoice.issueTiming)
     print("chargeDirection (과금방향) : %s " % taxinvoice.chargeDirection)
     print("serialNum (일련번호) : %s " % taxinvoice.serialNum)
     print("kwon (권) : %s " % taxinvoice.kwon)
