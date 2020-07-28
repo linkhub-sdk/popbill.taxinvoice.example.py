@@ -39,14 +39,14 @@ try:
     DType = "W"
 
     # 시작일자, 표시형식(yyyyMMdd)
-    SDate = "20181201"
+    SDate = "20200701"
 
     # 종료일자, 표시형식(yyyyMMdd)
-    EDate = "20190108"
+    EDate = "20200731"
 
     # 세금계산서 상태코드 배열, 2,3번째 자리에 와일드카드(*) 사용가능
     # 상태코드에 대한 자세한 사항은 "[전자세금계산서 API 연동매뉴얼] > 5.1 세금계산서 상태코드" 를 참조하시기 바랍니다.
-    State = ["1**", "3**", "6**"]
+    State = ["3**", "6**"]
 
     # 문서유형 배열, N-일반 세금계산서, M-수정 세금계산서
     Type = ["N", "M"]
@@ -56,6 +56,12 @@ try:
 
     # 발행형태 배열, N-정발행, R-역발행, T-위수탁
     IssueType = ["N", "R", "T"]
+
+    # 등록유형 배열, P-팝빌 등록, H-홈택스, 외부ASP
+    RegType = ["P", "H"]
+
+    # 공급받는자 사업자 휴폐업상태 배열, N-미확인, 0-미등록, 1-사업중, 2-폐업, 3-휴업
+    CloseDownState = ["N", "0", "1", "2", "3"]
 
     # 지연발행 여부, 공백-전체조회, 0-정상발행, 1-지연발행
     LateOnly = ""
@@ -84,10 +90,13 @@ try:
     # 연동문서 조회여부, 공백-전체조회, 0-일반문서 조회, 1-연동문서조회
     InterOPYN = ""
 
+    # 전자세금계산서 문서번호 또는 국세청승인번호 조회
+    MgtKey = ""
+
     response = taxinvoiceService.search(CorpNum, MgtKeyType, DType,
                                         SDate, EDate, State, Type, TaxType, LateOnly, TaxRegIDYN,
                                         TaxRegIDType, TaxRegID, Page, PerPage, Order, UserID,
-                                        QString, InterOPYN, IssueType)
+                                        QString, InterOPYN, IssueType, RegType, CloseDownState, MgtKey)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
