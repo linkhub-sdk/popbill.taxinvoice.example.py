@@ -17,6 +17,7 @@ taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
+taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 검색조건을 사용하여 세금계산서 목록을 조회합니다.

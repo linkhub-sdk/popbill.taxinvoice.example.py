@@ -17,6 +17,7 @@ taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
+taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 팝빌에 등록된 공인인증서의 유효성을 확인합니다.

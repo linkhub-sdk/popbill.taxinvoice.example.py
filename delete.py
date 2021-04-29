@@ -17,6 +17,7 @@ taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
+taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 1건의 전자세금계산서를 삭제합니다.

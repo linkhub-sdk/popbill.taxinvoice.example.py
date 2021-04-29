@@ -17,6 +17,7 @@ taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
 taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
+taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 팝빌에 로그인 상태로 접근할 수 있는 팝업 URL을 반환합니다.
