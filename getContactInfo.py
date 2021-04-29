@@ -45,7 +45,7 @@ try:
     print("fax (담당자 팩스번호) : %s " % contactInfo.fax)
     print("email (담당자 이메일) : %s " % contactInfo.email)
     print("regDT (등록일시) : %s " % contactInfo.regDT)
-    print("searchRole (담당자 조회권한 : %s " % contactInfo.searchRole)
+    print("searchRole (담당자 조회권한) : %s " % contactInfo.searchRole)
     print("mgrYN (관리자 여부) : %s " % contactInfo.mgrYN)
     print("state (계정상태) : %s " % contactInfo.state)
 
