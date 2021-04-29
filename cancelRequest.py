@@ -35,7 +35,7 @@ try:
     MgtKeyType = "BUY"
 
     # 문서번호
-    MgtKey = "20190108-001"
+    MgtKey = "20210429-001"
 
     # 메모
     Memo = "처리시 메모"

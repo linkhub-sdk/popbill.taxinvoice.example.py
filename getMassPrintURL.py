@@ -36,9 +36,9 @@ try:
 
     # 인쇄할 문서번호 배열, 최대 100건
     MgtKeyList = []
-    MgtKeyList.append("20190116-01")
-    MgtKeyList.append("20190116-02")
-    MgtKeyList.append("20190116-03")
+    MgtKeyList.append("20210429-01")
+    MgtKeyList.append("20210429-02")
+    MgtKeyList.append("20210429-03")
 
     url = taxinvoiceService.getMassPrintURL(CorpNum, MgtKeyType, MgtKeyList)
     print("URL: %s" % url)

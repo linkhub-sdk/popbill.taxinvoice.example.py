@@ -36,7 +36,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20190108-002"
+    MgtKey = "20210429-002"
 
     # 파일경로
     FilePath = "test.jpeg"

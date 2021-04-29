@@ -36,7 +36,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20190108-001"
+    MgtKey = "20210429-001"
 
     # 첨부파일 아이디, GetFiles API의 응답항목(AtachedFile) 확인.
     FileID = "AA5A49DC-8DBF-4F2D-B6ED-8AE84611058E.PBF"

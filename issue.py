@@ -34,7 +34,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20190228-002"
+    MgtKey = "20210429-002"
 
     # 메모
     Memo = "발행 메모"

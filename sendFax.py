@@ -36,7 +36,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20190108-001"
+    MgtKey = "20210429-001"
 
     # 발신번호
     Sender = "01083490706"

@@ -32,7 +32,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20190227-001"
+    MgtKey = "20210429-001"
 
     url = taxinvoiceService.getViewURL(CorpNum, MgtKeyType, MgtKey)
     print("URL: %s" % url)

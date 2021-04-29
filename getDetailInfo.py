@@ -34,7 +34,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20200728-01"
+    MgtKey = "20210429-01"
 
     taxinvoice = taxinvoiceService.getDetailInfo(CorpNum, MgtKeyType, MgtKey)
 

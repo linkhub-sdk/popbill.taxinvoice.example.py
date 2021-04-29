@@ -34,13 +34,13 @@ try:
     MgtKeyType = "SELL"
 
     # 문서 관리번호
-    MgtKey = "20190108-002"
+    MgtKey = "20210429-002"
 
     # 첨부해제할 전자명세서 종류코드, 121-거래명세서, 122-청구서, 123-견적서, 124-발주서 125-입금표, 126-영수증
     ItemCode = "121"
 
     # 첨부해제할 전자명세서 문서번호
-    StmtMgtKey = "20190116-001"
+    StmtMgtKey = "20210429-001"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

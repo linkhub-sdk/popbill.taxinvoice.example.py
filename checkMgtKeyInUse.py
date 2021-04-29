@@ -35,7 +35,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호, 1~24자리, 영문,숫자,-,_ 조합으로 사업자별로 중복되지 않도록 구성
-    MgtKey = "20190108-001"
+    MgtKey = "20210429-001"
 
     keyInUse = taxinvoiceService.checkMgtKeyInUse(CorpNum, MgtKeyType, MgtKey)
 

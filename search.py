@@ -40,10 +40,10 @@ try:
     DType = "W"
 
     # 시작일자, 표시형식(yyyyMMdd)
-    SDate = "20200701"
+    SDate = "20210401"
 
     # 종료일자, 표시형식(yyyyMMdd)
-    EDate = "20200731"
+    EDate = "20210430"
 
     # 세금계산서 상태코드 배열, 2,3번째 자리에 와일드카드(*) 사용가능
     # 상태코드에 대한 자세한 사항은 "[전자세금계산서 API 연동매뉴얼] > 5.1 세금계산서 상태코드" 를 참조하시기 바랍니다.
@@ -140,6 +140,7 @@ try:
         print("trusteeCorpName (수탁자 상호) : %s " % info.trusteeCorpName)
         print("trusteeCorpNum (수탁자 사업자번호) : %s " % info.trusteeCorpNum)
         print("trusteeMgtKey (수탁자 문서번호) : %s " % info.trusteeMgtKey)
-        print("trusteePrintYN (수탁자 인쇄여부) : %s " % info.trusteePrintYN) + "\n"
+        print("trusteePrintYN (수탁자 인쇄여부) : %s " % info.trusteePrintYN)
+        print("*" * 50)
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

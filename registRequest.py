@@ -37,13 +37,13 @@ try:
     UserID = testValue.testUserID
 
     # 세금계산서 문서번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
-    MgtKey = "20190108-003"
+    MgtKey = "20210429-003"
 
     # 세금계산서 정보
     taxinvoice = Taxinvoice(
 
         # [필수] 작성일자, 날짜형식(yyyyMMdd) ex)20190115
-        writeDate="20190115",
+        writeDate="20210429",
 
         # [필수] 과금방향, [정과금(공급자), 역과금(공급받는자)]중 기재
         # 역과금의 경우 역발행세금계산서 발행시에만 사용가능
@@ -225,7 +225,7 @@ try:
     taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
-            purchaseDT="20190115",  # 거래일자, yyyyMMdd
+            purchaseDT="20210429",  # 거래일자, yyyyMMdd
             itemName="품목1",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량
@@ -239,7 +239,7 @@ try:
     taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
-            purchaseDT="20190115",  # 거래일자, yyyyMMdd
+            purchaseDT="20210429",  # 거래일자, yyyyMMdd
             itemName="품목2",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량

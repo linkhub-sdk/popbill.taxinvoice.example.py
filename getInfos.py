@@ -35,10 +35,10 @@ try:
 
     # 문서번호 배열, 최대 1000건
     MgtKeyList = []
-    MgtKeyList.append("20190116-001")
-    MgtKeyList.append("20190116-002")
-    MgtKeyList.append("20190116-003")
-    MgtKeyList.append("20190116-004")
+    MgtKeyList.append("20210429-001")
+    MgtKeyList.append("20210429-002")
+    MgtKeyList.append("20210429-003")
+    MgtKeyList.append("20210429-004")
 
     InfoList = taxinvoiceService.getInfos(CorpNum, MgtKeyType, MgtKeyList)
 

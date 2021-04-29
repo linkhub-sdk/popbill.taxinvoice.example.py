@@ -33,7 +33,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20190108-001"
+    MgtKey = "20210429-001"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

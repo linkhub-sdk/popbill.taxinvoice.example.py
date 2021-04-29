@@ -36,7 +36,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서 관리번호
-    MgtKey = "20190108-002"
+    MgtKey = "20210429-002"
 
     fileList = taxinvoiceService.getFiles(CorpNum, MgtKeyType, MgtKey)
 
