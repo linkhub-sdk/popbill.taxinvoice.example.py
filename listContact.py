@@ -45,6 +45,7 @@ try:
         print("regDT (등록일시) : %s" % info.regDT)
         print("searchRole (담당자 조회권한) : %s" % info.searchRole)
         print("mgrYN (관리자 여부): %s" % info.mgrYN)
-        print("state (상태): %s" % info.state) + '\n'
+        print("state (상태): %s" % info.state)
+        print("*" * 50)
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))
