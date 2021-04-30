@@ -59,7 +59,7 @@ try:
         email="test@test.com",
 
         #담당자 조회권한, 1(개인) 2(읽기) 3(회사)
-        searchRole=1,
+        searchRole=1
     )
 
     result = taxinvoiceService.registContact(CorpNum, newContact, UserID)
