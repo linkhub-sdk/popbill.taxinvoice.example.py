@@ -20,10 +20,8 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-연동회원의 잔여포인트를 확인합니다.
-- 과금방식이 파트너과금인 경우 파트너 잔여포인트(GetPartnerBalance API)
-  를 통해 확인하시기 바랍니다.
-- https://docs.popbill.com/taxinvoice/python/api#GetBalance
+초대량 발행 접수결과를 확인합니다.
+- https://docs.popbill.com/taxinvoice/python/api#GetBulkResult
 '''
 
 try:
@@ -62,6 +60,6 @@ try:
         print("ntsconfirmNum (국세청승인번호) : %s " % bulkTaxinvoiceIssueResult.ntsconfirmNum)
         print("issueDT (발행일시) : %s " % bulkTaxinvoiceIssueResult.issueDT)
         print("*" * 50)
-        
+
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))
