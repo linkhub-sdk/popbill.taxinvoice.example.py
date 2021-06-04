@@ -32,7 +32,7 @@ try:
 
     sendToNTSConfig = taxinvoiceService.getSendToNTSConfig(CorpNum)
 
-    print("sendToNTS: %s" % sendToNTSConfig.sendToNTS)
+    print("sendToNTS: %s" % sendToNTSConfig)
 
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))
