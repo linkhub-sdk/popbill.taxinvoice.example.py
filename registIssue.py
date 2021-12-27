@@ -44,7 +44,7 @@ try:
     # 거래명세서 동시작성여부
     writeSpecification = False
 
-    # 거래명세서 동시작성시, 명세서 관리번호
+    # 거래명세서 동시작성시, 명세서 문서번호
     dealInvoiceMgtKey = ""
 
     # 메모

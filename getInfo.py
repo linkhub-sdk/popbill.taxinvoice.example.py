@@ -39,7 +39,7 @@ try:
     taxinvoiceInfo = taxinvoiceService.getInfo(CorpNum, MgtKeyType, MgtKey)
 
     print("세금계산서 정보>")
-    print("itemKey (팝빌 관리번호) : %s " % taxinvoiceInfo.itemKey)
+    print("itemKey (팝빌번호) : %s " % taxinvoiceInfo.itemKey)
     print("taxType (과세형태) : %s " % taxinvoiceInfo.taxType)
     print("writeDate (작성일자) : %s " % taxinvoiceInfo.writeDate)
     print("regDT (임시저장 일자) : %s " % taxinvoiceInfo.regDT)

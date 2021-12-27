@@ -45,7 +45,7 @@ try:
     for info in InfoList:
 
         print("\n======세금계산서 정보======>")
-        print("itemKey (팝빌 관리번호) : %s " % info.itemKey)
+        print("itemKey (팝빌번호) : %s " % info.itemKey)
         print("taxType (과세형태) : %s " % info.taxType)
         print("writeDate (작성일자) : %s " % info.writeDate)
         print("regDT (임시저장 일자) : %s " % info.regDT)

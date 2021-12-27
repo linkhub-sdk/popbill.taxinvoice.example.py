@@ -57,7 +57,7 @@ try:
     print("remark1 (비고1) : %s " % taxinvoice.remark1)
     print("remark2 (비고2) : %s " % taxinvoice.remark2)
     print("remark3 (비고3) : %s " % taxinvoice.remark3)
-    print("invoicerMgtKey (공급자 관리번호) : %s " % taxinvoice.invoicerMgtKey)
+    print("invoicerMgtKey (공급자 문서번호) : %s " % taxinvoice.invoicerMgtKey)
     print("invoicerCorpNum (공급자 사업자번호) : %s " % taxinvoice.invoicerCorpNum)
     print("invoicerTaxRegID (공급자 종사업장 식별번호) : %s " % taxinvoice.invoicerTaxRegID)
     print("invoicerCorpName (공급자 상호) : %s " % taxinvoice.invoicerCorpName)
@@ -87,7 +87,6 @@ try:
     print("invoiceeEmail1 (주)담당자 이메일) : %s " % taxinvoice.invoiceeEmail1)
     print("modifyCode (수정 사유코드) : %s " % taxinvoice.modifyCode)
     print("orgNTSConfirmNum (원본 국세청승인번호) : %s " % taxinvoice.orgNTSConfirmNum)
-    print("originalTaxinvoiceKey (원본 팝빌 관리번호) : %s " % taxinvoice.originalTaxinvoiceKey)
     print("businessLicenseYN (사업자등록증 이미지 첨부여부) : %s " % taxinvoice.businessLicenseYN)
     print("bankBookYN (통장사본이미지 첨부여부) : %s " % taxinvoice.bankBookYN) + "\n"
 
