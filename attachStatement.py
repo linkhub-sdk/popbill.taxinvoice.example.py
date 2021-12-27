@@ -40,7 +40,7 @@ try:
     ItemCode = "121"
 
     # 첨부할 전자명세서 문서번호
-    StmtMgtKey = "20190116-001"
+    StmtMgtKey = "20211201-001"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

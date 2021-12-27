@@ -47,7 +47,7 @@ try:
     for i in range(0,20):
         taxinvoicelist.append(
             Taxinvoice(
-                # [필수] 작성일자, 날짜형식(yyyyMMdd) ex)20190116
+                # [필수] 작성일자, 날짜형식(yyyyMMdd) ex)20211201
                 writeDate="20210429",
 
                 # [필수] 과금방향, [정과금(공급자), 역과금(공급받는자)]중 기재
