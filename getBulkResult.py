@@ -55,6 +55,7 @@ try:
         print("invoicerMgtKey (공급자 문서번호) : %s " % bulkTaxinvoiceIssueResult.invoicerMgtKey)
         print("invoicerMgtKey (수탁자 문서번호) : %s " % bulkTaxinvoiceIssueResult.invoicerMgtKey)
         print("code (응답코드) : %s " % bulkTaxinvoiceIssueResult.code)
+        print("message (응답메시지) : %s " % bulkTaxinvoiceIssueResult.message)
         print("ntsconfirmNum (국세청승인번호) : %s " % bulkTaxinvoiceIssueResult.ntsconfirmNum)
         print("issueDT (발행일시) : %s " % bulkTaxinvoiceIssueResult.issueDT)
         print("*" * 50)
