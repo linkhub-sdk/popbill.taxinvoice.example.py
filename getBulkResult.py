@@ -20,7 +20,8 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-초대량 발행 접수결과를 확인합니다.
+접수시 기재한 SubmitID를 사용하여 세금계산서 접수결과를 확인합니다.
+- 개별 세금계산서 처리상태는 접수상태(txState)가 완료(2) 시 반환됩니다.
 - https://docs.popbill.com/taxinvoice/python/api#GetBulkResult
 '''
 
@@ -32,7 +33,7 @@ try:
 
     #제출아이디
     #최대 36자리 영문, 숫자, '-' 조합으로 구성
-    submitID = 'BulkSubmit-PythonShell01'
+    submitID = 'PYTHON-BULK'
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

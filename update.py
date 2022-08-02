@@ -20,7 +20,7 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-[임시저장] 상태의 세금계산서의 항목을 수정합니다.
+"임시저장" 상태의 세금계산서를 수정합니다.
 - https://docs.popbill.com/taxinvoice/python/api#Update
 '''
 
@@ -30,11 +30,11 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # [필수] 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
+    # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "SELL"
 
-    # [필수] 수정할 세금계산서 문서번호
-    MgtKey = "20210429-001"
+    # 수정할 세금계산서 문서번호
+    MgtKey = "20220803-001"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID
@@ -42,39 +42,39 @@ try:
     # 세금계산서 정보
     taxinvoice = Taxinvoice(
 
-        # [필수] 작성일자, 날짜형식(yyyyMMdd)
-        writeDate="20210429",
+        # 작성일자, 날짜형식(yyyyMMdd)
+        writeDate="20220803",
 
-        # [필수] 과금방향, '정과금(공급자)', '역과금(공급받는자)'중 기재
+        # 과금방향, '정과금(공급자)', '역과금(공급받는자)'중 기재
         # 역과금의 경우 역발행세금계산서 발행시에만 사용가능
         chargeDirection="정과금",
 
-        # [필수] 발행형태, '정발행','역발행','위수탁' 중 기재
+        # 발행형태, '정발행','역발행','위수탁' 중 기재
         issueType="정발행",
 
-        # [필수] '영수'/'청구' 중 기재
+        # {영수, 청구, 없음} 중 기재
         purposeType="영수",
 
-        # [필수] 과세형태, '과세'/'영세'/'면세' 중 기재
+        # 과세형태, {과세, 영세, 면세} 중 기재
         taxType="과세",
 
         ######################################################################
         #                             공급자 정보
         ######################################################################
 
-        # [필수] 공급자 사업자번호, '-' 없이 10자리 기재.
+        # 공급자 사업자번호, '-' 없이 10자리 기재.
         invoicerCorpNum=testValue.testCorpNum,
 
         # 공급자 종사업장 식별번호
         invoicerTaxRegID=None,
 
-        # [필수] 공급자 상호
+        # 공급자 상호
         invoicerCorpName="공급자 상호",
 
-        # [필수] 공급자 문서번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
+        # 공급자 문서번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
         invoicerMgtKey=MgtKey,
 
-        # [필수] 공급자 대표자 성명
+        # 공급자 대표자 성명
         invoicerCEOName="공급자 대표자 성명_수정",
 
         # 공급자 주소
@@ -90,13 +90,13 @@ try:
         invoicerContactName="공급자 담당자명",
 
         # 공급자 담당자 메일주소
-        invoicerEmail="test@test.com",
+        invoicerEmail="",
 
         # 공급자 담당자 연락처
-        invoicerTEL="070-4304-2991",
+        invoicerTEL="",
 
         # 공급자 담당자 휴대폰 번호
-        invoicerHP='010-1111-2222',
+        invoicerHP='',
 
         # 발행시 알림문자 전송여부 (정발행에서만 사용가능)
         # - 공급받는자 주)담당자 휴대폰번호(invoiceeHP1)로 전송
@@ -107,22 +107,22 @@ try:
         #                            공급받는자 정보
         ######################################################################
 
-        # [필수] 공급받는자 구분 '사업자'/'개인'/'외국인' 중 기재
+        # 공급받는자 구분 '사업자'/'개인'/'외국인' 중 기재
         invoiceeType='사업자',
 
         # 공급받는자 종사업장 식별번호, 필요시 숫자 4자리 기재
         invoiceeTaxRegID=None,
 
-        # [필수] 공급받는자 사업자번호, '-' 제외 10자리
+        # 공급받는자 사업자번호, '-' 제외 10자리
         invoiceeCorpNum='8888888888',
 
-        # [필수] 공급받는자 상호
+        # 공급받는자 상호
         invoiceeCorpName="공급받는자 상호",
 
         # [역발행시 필수] 공급받는자 문서번호
         invoiceeMgtKey=None,
 
-        # [필수] 공급받는자 대표자 성명
+        # 공급받는자 대표자 성명
         invoiceeCEOName="공급받는자 대표자 성명",
 
         # 공급받는자 주소
@@ -140,16 +140,16 @@ try:
         # 공급받는자 담당자 메일주소
         # 팝빌 개발환경에서 테스트하는 경우에도 안내 메일이 전송되므로,
         # 실제 거래처의 메일주소가 기재되지 않도록 주의
-        invoiceeEmail1="test@test.com",
+        invoiceeEmail1="",
 
         # 공급받는자 연락처
-        invoiceeTEL1="070-111-222",
+        invoiceeTEL1="",
 
         # 공급받는자 담당자 휴대폰번호
-        invoiceeHP1="010-2222-1111",
+        invoiceeHP1="",
 
         # 공급받는자 담당자 팩스번호
-        invoiceeFAX1="070-4304-2991",
+        invoiceeFAX1="",
 
         # 역발행 요청시 알림문자 전송여부 (역발행에서만 사용가능)
         # - 공급자 담당자 휴대폰번호(invoicerHP)로 전송
@@ -160,13 +160,13 @@ try:
         #                          세금계산서 기재정보
         ######################################################################
 
-        # [필수] 공급가액 합계
+        # 공급가액 합계
         supplyCostTotal="100000",
 
-        # [필수] 세액 합계
+        # 세액 합계
         taxTotal="10000",
 
-        # [필수] 합계금액, 공급가액 합계 + 세액 합계
+        # 합계금액, 공급가액 합계 + 세액 합계
         totalAmount="110000",
 
         # 기재상 '일련번호' 항목
@@ -184,7 +184,9 @@ try:
         # 기재상 '외상미수금' 항목
         credit='',
 
-        # 기재 상 '비고' 항목
+        # 비고
+        # {invoiceeType}이 "외국인" 이면 remark1 필수
+        # - 외국인 등록번호 또는 여권번호 입력
         remark1='비고1',
         remark2='비고2',
         remark3='비고3',
@@ -197,10 +199,14 @@ try:
         # 미기재시 ho=None,
         ho=2,
 
-        # 사업자등록증 이미지 첨부여부
+        # 사업자등록증 이미지 첨부여부  (true / false 중 택 1)
+        # └ true = 첨부 , false = 미첨부(기본값)
+        # - 팝빌 사이트 또는 인감 및 첨부문서 등록 팝업 URL (GetSealURL API) 함수를 이용하여 등록
         businessLicenseYN=False,
 
-        # 통장사본 이미지 첨부여부
+        # 통장사본 이미지 첨부여부  (true / false 중 택 1)
+        # └ true = 첨부 , false = 미첨부(기본값)
+        # - 팝빌 사이트 또는 인감 및 첨부문서 등록 팝업 URL (GetSealURL API) 함수를 이용하여 등록
         bankBookYN=False,
 
         ######################################################################
@@ -228,7 +234,7 @@ try:
     taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
-            purchaseDT="20210429",  # 거래일자, yyyyMMdd
+            purchaseDT="20220803",  # 거래일자, yyyyMMdd
             itemName="품목1",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량
@@ -242,7 +248,7 @@ try:
     taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
-            purchaseDT="20210429",  # 거래일자, yyyyMMdd
+            purchaseDT="20220803",  # 거래일자, yyyyMMdd
             itemName="품목2",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량

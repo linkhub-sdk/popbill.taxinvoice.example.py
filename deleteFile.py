@@ -20,9 +20,8 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-세금계산서에 첨부된 파일을 삭제합니다.
-- 첨부파일을 식별하는 파일아이디는 첨부파일 목록(GetFiles API) 함수의 응답항목
-  중 파일아이디(AttachedFile) 통해 확인할 수 있습니다.
+"임시저장" 상태의 세금계산서에 첨부된 1개의 파일을 삭제합니다.
+- 파일을 식별하는 파일아이디는 첨부파일 목록(GetFiles API) 의 응답항목 중 파일아이디(AttachedFile) 값을 통해 확인할 수 있습니다.
 - https://docs.popbill.com/taxinvoice/python/api#DeleteFile
 '''
 
@@ -36,7 +35,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20210429-001"
+    MgtKey = "20220803-001"
 
     # 첨부파일 아이디, GetFiles API의 응답항목(AtachedFile) 확인.
     FileID = "AA5A49DC-8DBF-4F2D-B6ED-8AE84611058E.PBF"

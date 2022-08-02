@@ -34,13 +34,13 @@ try:
     MgtKeyType = "SELL"
 
     # 세금계산서 문서번호
-    MgtKey = "20210429-002"
+    MgtKey = "20220803-001"
 
     # 첨부할 전자명세서 종류코드, 121-명세서, 122-청구서, 123-견적서, 124-발주서 125-입금표, 126-영수증
     ItemCode = "121"
 
     # 첨부할 전자명세서 문서번호
-    StmtMgtKey = "20211201-001"
+    StmtMgtKey = "20220803-001"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

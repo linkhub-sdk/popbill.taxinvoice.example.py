@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 
 '''
- 팝빌 전자세금계산서 API Python SDK Example
+팝빌 전자세금계산서 API Python SDK Example
 
- - Python SDK 연동환경 설정방법 안내 : https://docs.popbill.com/taxinvoice/sdk?lang=python
- - 업데이트 일자 : 2021-04-30
- - 연동 기술지원 연락처 : 1600-9854
- - 연동 기술지원 이메일 : code@linkhubcorp.com
+- Python SDK 연동환경 설정방법 안내 : https://docs.popbill.com/taxinvoice/sdk?lang=python
+- 업데이트 일자 : 2022-08-03
+- 연동 기술지원 연락처 : 1600-9854
+- 연동 기술지원 이메일 : code@linkhubcorp.com
 
- <테스트 연동개발 준비사항>
- 1) 20, 23번 라인에 선언된 링크아이디(LinkID)와 비밀키(SecretKey)를
-    연동신청 후 메일로 발급받은 인증정보를 참조하여 변경합니다.
- 2) 전자세금계산서 발행을 위해 공인인증서를 등록합니다. (등록방법은 사이트/API 두가지 방식이 있습니다.)
-     1. 팝빌사이트 로그인 > [전자세금계산서] > [환경설정] > [공인인증서 관리] 메뉴에서 등록
-     2. 공인인증서 등록 팝업(getTaxCertURL) API 호출시 반환된 URL을 통해 등록
+<테스트 연동개발 준비사항>
+1) 20, 23번 라인에 선언된 링크아이디(LinkID)와 비밀키(SecretKey)를
+   연동신청 후 메일로 발급받은 인증정보를 참조하여 변경합니다.
+2) 전자세금계산서 발행을 위해 공인인증서를 등록합니다. (등록방법은 사이트/API 두가지 방식이 있습니다.)
+   1. 팝빌사이트 로그인 > [전자세금계산서] > [환경설정] > [공인인증서 관리] 메뉴에서 등록
+   2. 공인인증서 등록 팝업(getTaxCertURL) API 호출시 반환된 URL을 통해 등록
 '''
 
 # 링크아이디

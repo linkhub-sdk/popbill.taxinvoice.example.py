@@ -20,7 +20,7 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-연동회원의 담당자 정보를 수정합니다.
+연동회원 사업자번호에 등록된 담당자(팝빌 로그인 계정) 정보를 수정합니다.
 - https://docs.popbill.com/taxinvoice/python/api#UpdateContact
 '''
 
@@ -43,16 +43,10 @@ try:
         personName="담당자 성명",
 
         # 연락처 (최대 20자)
-        tel="070-4304-2991",
-
-        # 휴대폰번호 (최대 20자)
-        hp="010-4324-4324",
-
-        # 팩스번호 (최대 20자)
-        fax="070-111-222",
+        tel="",
 
         # 메일주소 (최대 100자)
-        email="dev@linkhub.co.kr",
+        email="",
 
         ##담당자 조회권한, 1(개인) 2(읽기) 3(회사)
         searchRole=1

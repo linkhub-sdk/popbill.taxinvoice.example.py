@@ -20,9 +20,7 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-세금계산서에 첨부파일을 등록합니다.
-- [임시저장] 상태의 세금계산서만 파일을 첨부할수 있습니다.
-- 첨부파일은 최대 5개까지 등록할 수 있습니다.
+"임시저장" 상태의 세금계산서에 1개의 파일을 첨부합니다. (최대 5개)
 - https://docs.popbill.com/taxinvoice/python/api#AttachFile
 '''
 
@@ -36,7 +34,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20210429-002"
+    MgtKey = "20220803-002"
 
     # 파일경로
     FilePath = "test.jpeg"

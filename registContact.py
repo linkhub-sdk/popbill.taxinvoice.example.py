@@ -20,7 +20,7 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-연동회원의 담당자를 신규로 등록합니다.
+연동회원 사업자번호에 담당자(팝빌 로그인 계정)를 추가합니다.
 - https://docs.popbill.com/taxinvoice/python/api#RegistContact
 '''
 
@@ -47,16 +47,10 @@ try:
         personName="담당자명",
 
         # 담당자 연락처 (최대 20자)
-        tel="010-111-222",
-
-        # 담당자 휴대폰번호 (최대 20자)
-        hp="010-111-222",
-
-        # 담당자 팩스번호 (최대 20자)
-        fax="070-111-222",
+        tel="",
 
         # 담당자 이메일 (최대 100자)
-        email="test@test.com",
+        email="",
 
         #담당자 조회권한, 1(개인) 2(읽기) 3(회사)
         searchRole=1

@@ -17,7 +17,7 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-세금계산서 발행 안내메일을 재전송합니다.
+발행 안내메일을 재전송합니다.
 - https://docs.popbill.com/taxinvoice/python/api#SendEmail
 '''
 
@@ -31,12 +31,12 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20210429-001"
+    MgtKey = "20220803-001"
 
     # 수신자 메일주소
     # 팝빌 개발환경에서 테스트하는 경우에도 안내 메일이 전송되므로,
     # 실제 거래처의 메일주소가 기재되지 않도록 주의
-    ReceiverMail = "test@test.com"
+    ReceiverMail = ""
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

@@ -20,7 +20,7 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-유통사업자 메일 목록 확인
+전자세금계산서 유통사업자의 메일 목록을 확인합니다.
 - https://docs.popbill.com/taxinvoice/python/api#GetEmailPublicKeys
 '''
 

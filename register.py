@@ -20,9 +20,12 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-1건의 세금계산서를 임시저장 합니다.
-- 세금계산서 임시저장(Register API) 호출후에는 발행(Issue API)을 호출해야만 국세청으로 전송됩니다.
-- 임시저장과 발행을 한번의 호출로 처리하는 즉시발행(RegistIssue API) 프로세스 연동을 권장합니다.
+작성된 세금계산서 데이터를 팝빌에 저장합니다.
+- "임시저장" 상태의 세금계산서는 발행(Issue) 함수를 호출하여 "발행완료" 처리한 경우에만 국세청으로 전송됩니다.
+- 정발행 시 임시저장(Register)과 발행(Issue)을 한번의 호출로 처리하는 즉시발행(RegistIssue API) 프로세스 연동을 권장합니다.
+- 역발행 시 임시저장(Register)과 역발행요청(Request)을 한번의 호출로 처리하는 즉시요청(RegistRequest API) 프로세스 연동을 권장합니다.
+- 세금계산서 파일첨부 기능을 구현하는 경우, 임시저장(Register API) -> 파일첨부(AttachFile API) -> 발행(Issue API) 함수를 차례로 호출합니다.
+- 임시저장된 세금계산서는 팝빌 사이트 '임시문서함'에서 확인 가능합니다.
 - https://docs.popbill.com/taxinvoice/python/api#Register
 '''
 
@@ -36,7 +39,7 @@ try:
     UserID = testValue.testUserID
 
     # 세금계산서 문서번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
-    MgtKey = "20210429-002"
+    MgtKey = "20220803-002"
 
     # 거래명세서 동시작성여부
     writeSpecification = False
@@ -45,7 +48,7 @@ try:
     taxinvoice = Taxinvoice(
 
         # 작성일자, 날짜형식(yyyyMMdd)
-        writeDate="20210429",
+        writeDate="20220803",
 
         # 과금방향, '정과금(공급자)', '역과금(공급받는자)'중 기재
         # 역과금의 경우 역발행세금계산서 발행시에만 사용가능
@@ -54,10 +57,10 @@ try:
         # 발행형태, '정발행','역발행','위수탁' 중 기재
         issueType="정발행",
 
-        # '영수'/'청구' 중 기재
+        # {영수, 청구, 없음} 중 기재
         purposeType="영수",
 
-        # 과세형태, '과세'/'영세'/'면세' 중 기재
+        # 과세형태, {과세, 영세, 면세} 중 기재
         taxType="과세",
 
         ######################################################################
@@ -92,13 +95,13 @@ try:
         invoicerContactName="공급자 담당자명",
 
         # 공급자 담당자 메일주소
-        invoicerEmail="test@test.com",
+        invoicerEmail="",
 
         # 공급자 담당자 연락처
-        invoicerTEL="070-4304-2991",
+        invoicerTEL="",
 
         # 공급자 담당자 휴대폰 번호
-        invoicerHP='010-1111-2222',
+        invoicerHP='',
 
         # 발행시 알림문자 전송여부 (정발행에서만 사용가능)
         # - 공급받는자 주)담당자 휴대폰번호(invoiceeHP1)로 전송
@@ -139,16 +142,16 @@ try:
         # 공급받는자 담당자 메일주소
         # 팝빌 개발환경에서 테스트하는 경우에도 안내 메일이 전송되므로,
         # 실제 거래처의 메일주소가 기재되지 않도록 주의
-        invoiceeEmail1="test@test.com",
+        invoiceeEmail1="",
 
         # 공급받는자 연락처
-        invoiceeTEL1="070-111-222",
+        invoiceeTEL1="",
 
         # 공급받는자 담당자 휴대폰번호
-        invoiceeHP1="010-2222-1111",
+        invoiceeHP1="",
 
         # 공급받는자 담당자 팩스번호
-        invoiceeFAX1="070-4304-2991",
+        invoiceeFAX1="",
 
         # 역발행 요청시 알림문자 전송여부 (역발행에서만 사용가능)
         # - 공급자 담당자 휴대폰번호(invoicerHP)로 전송
@@ -196,10 +199,14 @@ try:
         # 미기재시 ho=None,
         ho=2,
 
-        # 사업자등록증 이미지 첨부여부
+        # 사업자등록증 이미지 첨부여부  (true / false 중 택 1)
+        # └ true = 첨부 , false = 미첨부(기본값)
+        # - 팝빌 사이트 또는 인감 및 첨부문서 등록 팝업 URL (GetSealURL API) 함수를 이용하여 등록
         businessLicenseYN=False,
 
-        # 통장사본 이미지 첨부여부
+        # 통장사본 이미지 첨부여부  (true / false 중 택 1)
+        # └ true = 첨부 , false = 미첨부(기본값)
+        # - 팝빌 사이트 또는 인감 및 첨부문서 등록 팝업 URL (GetSealURL API) 함수를 이용하여 등록
         bankBookYN=False,
 
         ######################################################################
@@ -227,7 +234,7 @@ try:
     taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=1,  # 일련번호, 1부터 순차기재
-            purchaseDT="20210429",  # 거래일자, yyyyMMdd
+            purchaseDT="20220803",  # 거래일자, yyyyMMdd
             itemName="품목1",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량
@@ -241,7 +248,7 @@ try:
     taxinvoice.detailList.append(
         TaxinvoiceDetail(
             serialNum=2,  # 일련번호, 1부터 순차기재
-            purchaseDT="20210429",  # 거래일자, yyyyMMdd
+            purchaseDT="20220803",  # 거래일자, yyyyMMdd
             itemName="품목2",  # 품목
             spec="규격",  # 규격
             qty=1,  # 수량

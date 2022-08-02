@@ -20,7 +20,9 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-1건의 세금계산서 상태/요약 정보를 확인합니다.
+세금계산서 1건의 상태 및 요약정보를 확인합니다.
+- 리턴값 'TaxinvoiceInfo'의 변수 'stateCode'를 통해 세금계산서의 상태코드를 확인합니다.
+- 세금계산서 상태코드 [https://docs.popbill.com/taxinvoice/stateCode?lang=python]
 - https://docs.popbill.com/taxinvoice/python/api#GetInfo
 '''
 
@@ -34,7 +36,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20210429-001"
+    MgtKey = "20220803-001"
 
     taxinvoiceInfo = taxinvoiceService.getInfo(CorpNum, MgtKeyType, MgtKey)
 

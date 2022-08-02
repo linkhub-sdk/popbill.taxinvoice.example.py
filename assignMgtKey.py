@@ -20,7 +20,7 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-팝빌사이트에서 작성된 세금계산서에 파트너 문서번호를 할당합니다.
+팝빌 사이트를 통해 발행하여 문서번호가 부여되지 않은 세금계산서에 문서번호를 할당합니다.
 - https://docs.popbill.com/taxinvoice/python/api#AssignMgtKey
 '''
 
@@ -38,7 +38,7 @@ try:
 
     # 할당할 문서번호, 숫자, 영문 '-', '_' 조합으로 1~24자리까지
     # 사업자번호별 중복없는 고유번호 할당
-    MgtKey = "20210429-001"
+    MgtKey = "20220803-001"
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID

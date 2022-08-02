@@ -20,7 +20,9 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-다량의 세금계산서 상태/요약 정보를 확인합니다. (최대 1000건)
+다수건의 세금계산서 상태 및 요약 정보를 확인합니다. (1회 호출 시 최대 1,000건 확인 가능)
+- 리턴값 'TaxinvoiceInfo'의 변수 'stateCode'를 통해 세금계산서의 상태코드를 확인합니다.
+- 세금계산서 상태코드 [https://docs.popbill.com/taxinvoice/stateCode?lang=python]
 - https://docs.popbill.com/taxinvoice/python/api#GetInfos
 '''
 
@@ -35,10 +37,9 @@ try:
 
     # 문서번호 배열, 최대 1000건
     MgtKeyList = []
-    MgtKeyList.append("20210429-001")
-    MgtKeyList.append("20210429-002")
-    MgtKeyList.append("20210429-003")
-    MgtKeyList.append("20210429-004")
+    MgtKeyList.append("20220803-001")
+    MgtKeyList.append("20220803-002")
+    MgtKeyList.append("20220803-003")
 
     InfoList = taxinvoiceService.getInfos(CorpNum, MgtKeyType, MgtKeyList)
 

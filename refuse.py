@@ -17,7 +17,7 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-공급받는자에게 요청받은 역발행 세금계산서를 [거부]처리 합니다.
+공급자가 공급받는자에게 역발행 요청 받은 세금계산서의 발행을 거부합니다.
 - https://docs.popbill.com/taxinvoice/python/api#Refuse
 '''
 
@@ -31,7 +31,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20211201-001"
+    MgtKey = "20220803-001"
 
     # 메모
     Memo = "역발행 거부 메모"

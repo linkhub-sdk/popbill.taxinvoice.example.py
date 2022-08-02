@@ -17,8 +17,8 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-공급받는자 메일링크 URL을 반환합니다.
-- 메일링크 URL은 유효시간이 존재하지 않습니다.
+전자세금계산서 안내메일의 상세보기 링크 URL을 반환합니다.
+- 함수 호출로 반환 받은 URL에는 유효시간이 없습니다.
 - https://docs.popbill.com/taxinvoice/python/api#GetMailURL
 '''
 
@@ -32,7 +32,7 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20210429-001"
+    MgtKey = "20220803-001"
 
     url = taxinvoiceService.getMailURL(CorpNum, MgtKeyType, MgtKey)
     print("URL: %s" % url)

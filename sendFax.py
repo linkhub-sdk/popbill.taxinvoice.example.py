@@ -20,9 +20,8 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-전자세금계산서를 팩스전송합니다.
-- 팩스 전송 요청시 포인트가 차감됩니다. (전송실패시 환불처리)
-- 전송내역 확인은 [팝빌 로그인] > [문자 팩스] > [팩스] > [전송내역] 메뉴에서 전송결과를 확인할 수 있습니다.
+세금계산서를 팩스로 전송하는 함수로, 팝빌 사이트 [문자·팩스] > [팩스] > [전송내역] 메뉴에서 전송결과를 확인 할 수 있습니다.
+- 함수 호출시 포인트가 과금됩니다.
 - https://docs.popbill.com/taxinvoice/python/api#SendFAX
 '''
 
@@ -36,13 +35,13 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20210429-001"
+    MgtKey = "20220803-001"
 
     # 발신번호
     Sender = "01083490706"
 
     # 수신팩스번호
-    Receiver = "070-111-222"
+    Receiver = ""
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID
