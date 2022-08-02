@@ -88,7 +88,7 @@ try:
     print("modifyCode (수정 사유코드) : %s " % taxinvoice.modifyCode)
     print("orgNTSConfirmNum (원본 국세청승인번호) : %s " % taxinvoice.orgNTSConfirmNum)
     print("businessLicenseYN (사업자등록증 이미지 첨부여부) : %s " % taxinvoice.businessLicenseYN)
-    print("bankBookYN (통장사본이미지 첨부여부) : %s " % taxinvoice.bankBookYN) + "\n"
+    print("bankBookYN (통장사본이미지 첨부여부) : %s " % taxinvoice.bankBookYN + "\n")
 
     print("=" * 15 + "상세항목(품목) 정보" + "=" * 15)
     if taxinvoice.detailList is not None:

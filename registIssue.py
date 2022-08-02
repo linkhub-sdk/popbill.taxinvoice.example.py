@@ -31,7 +31,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 세금계산서 문서번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
-    MgtKey = "20220803-001"
+    MgtKey = "20220803-003"
 
     # 지연발행 강제여부  (true / false 중 택 1)
     # └ true = 가능 , false = 불가능

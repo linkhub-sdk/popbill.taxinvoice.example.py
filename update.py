@@ -34,13 +34,13 @@ try:
     MgtKeyType = "SELL"
 
     # 수정할 세금계산서 문서번호
-    MgtKey = "20220803-001"
+    MgtKey = "20220803-002"
 
     # 세금계산서 정보
     taxinvoice = Taxinvoice(
 
         # 작성일자, 날짜형식(yyyyMMdd)
-        writeDate="20220803",
+        writeDate="20220802",
 
         # 과금방향, '정과금(공급자)', '역과금(공급받는자)'중 기재
         # 역과금의 경우 역발행세금계산서 발행시에만 사용가능

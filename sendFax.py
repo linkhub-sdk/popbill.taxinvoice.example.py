@@ -38,7 +38,7 @@ try:
     MgtKey = "20220803-001"
 
     # 발신번호
-    Sender = "01083490706"
+    Sender = ""
 
     # 수신팩스번호
     Receiver = ""

@@ -35,7 +35,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 세금계산서 문서번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
-    MgtKey = "20220803-003"
+    MgtKey = "20220803-004"
 
     # 세금계산서 정보
     taxinvoice = Taxinvoice(

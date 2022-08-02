@@ -30,7 +30,7 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    taxinvoiceCertificate = taxinvoiceService.GetTaxCertInfo(CorpNum)
+    taxinvoiceCertificate = taxinvoiceService.getTaxCertInfo(CorpNum)
 
     print("인증서 정보>")
     print("regDT (등록일시) : %s " % taxinvoiceCertificate.regDT)

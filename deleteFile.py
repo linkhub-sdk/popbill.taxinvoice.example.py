@@ -35,10 +35,10 @@ try:
     MgtKeyType = "SELL"
 
     # 문서번호
-    MgtKey = "20220803-001"
+    MgtKey = "20220803-002"
 
     # 첨부파일 아이디, GetFiles API의 응답항목(AtachedFile) 확인.
-    FileID = "AA5A49DC-8DBF-4F2D-B6ED-8AE84611058E.PBF"
+    FileID = "25369B38-A463-4527-AEC8-B53539811C4F.PBF"
 
     result = taxinvoiceService.deleteFile(CorpNum, MgtKeyType, MgtKey, FileID)
 

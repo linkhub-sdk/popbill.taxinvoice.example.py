@@ -76,6 +76,6 @@ try:
     print("trusteeCorpName (수탁자 상호) : %s " % taxinvoiceInfo.trusteeCorpName)
     print("trusteeCorpNum (수탁자 사업자번호) : %s " % taxinvoiceInfo.trusteeCorpNum)
     print("trusteeMgtKey (수탁자 문서번호) : %s " % taxinvoiceInfo.trusteeMgtKey)
-    print("trusteePrintYN (수탁자 인쇄여부) : %s " % taxinvoiceInfo.trusteePrintYN) + "\n"
+    print("trusteePrintYN (수탁자 인쇄여부) : %s " % taxinvoiceInfo.trusteePrintYN + "\n")
 except PopbillException as PE:
     print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

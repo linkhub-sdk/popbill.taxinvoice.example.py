@@ -31,10 +31,10 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
-    MgtKeyType = "SELL"
+    MgtKeyType = "BUY"
 
     # 문서번호
-    MgtKey = "20220803-001"
+    MgtKey = "20220803-005"
 
     # 메모
     Memo = "역발행 요청 메모"
