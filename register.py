@@ -35,9 +35,6 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 세금계산서 문서번호, 1~24자리, 영문, 숫자, -, _ 조합으로 사업자별로 중복되지 않도록 구성
     MgtKey = "20220803-002"
 
@@ -284,7 +281,7 @@ try:
         )
     )
 
-    result = taxinvoiceService.register(CorpNum, taxinvoice, writeSpecification, UserID)
+    result = taxinvoiceService.register(CorpNum, taxinvoice, writeSpecification)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 

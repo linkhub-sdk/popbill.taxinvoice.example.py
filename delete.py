@@ -38,10 +38,7 @@ try:
     # 문서번호
     MgtKey = "20220803-001"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = taxinvoiceService.delete(CorpNum, MgtKeyType, MgtKey, UserID)
+    result = taxinvoiceService.delete(CorpNum, MgtKeyType, MgtKey)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:

@@ -36,9 +36,6 @@ try:
     # 수정할 세금계산서 문서번호
     MgtKey = "20220803-001"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 세금계산서 정보
     taxinvoice = Taxinvoice(
 
@@ -287,8 +284,7 @@ try:
     # 거래명세서 동시작성여부
     writeSpecification = False
 
-    result = taxinvoiceService.update(CorpNum, MgtKeyType, MgtKey, taxinvoice,
-                                      writeSpecification, UserID)
+    result = taxinvoiceService.update(CorpNum, MgtKeyType, MgtKey, taxinvoice, writeSpecification)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 

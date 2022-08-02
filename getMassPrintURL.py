@@ -31,6 +31,9 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
     # 세금계산서 발행유형, SELL : 매출 , BUY : 매입 , TRUSTEE : 수탁
     MgtKeyType = "SELL"
 
@@ -39,7 +42,7 @@ try:
     MgtKeyList.append("20220803-001")
     MgtKeyList.append("20220803-002")
 
-    url = taxinvoiceService.getMassPrintURL(CorpNum, MgtKeyType, MgtKeyList)
+    url = taxinvoiceService.getMassPrintURL(CorpNum, MgtKeyType, MgtKeyList, UserID)
     print("URL: %s" % url)
 
 except PopbillException as PE:

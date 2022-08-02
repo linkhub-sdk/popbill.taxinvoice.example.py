@@ -40,10 +40,7 @@ try:
     # 첨부파일 아이디, GetFiles API의 응답항목(AtachedFile) 확인.
     FileID = "AA5A49DC-8DBF-4F2D-B6ED-8AE84611058E.PBF"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = taxinvoiceService.deleteFile(CorpNum, MgtKeyType, MgtKey, FileID, UserID)
+    result = taxinvoiceService.deleteFile(CorpNum, MgtKeyType, MgtKey, FileID)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:

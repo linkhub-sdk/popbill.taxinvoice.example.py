@@ -40,10 +40,7 @@ try:
     # 메모
     Memo = "발행취소 메모"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = taxinvoiceService.cancelIssue(CorpNum, MgtKeyType, MgtKey, Memo, UserID)
+    result = taxinvoiceService.cancelIssue(CorpNum, MgtKeyType, MgtKey, Memo)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:

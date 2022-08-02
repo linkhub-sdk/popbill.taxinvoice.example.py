@@ -42,11 +42,7 @@ try:
     # 첨부해제할 전자명세서 문서번호
     StmtMgtKey = "20220803-001"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = taxinvoiceService.detachStatement(CorpNum, MgtKeyType, MgtKey,
-                                               ItemCode, StmtMgtKey, UserID)
+    result = taxinvoiceService.detachStatement(CorpNum, MgtKeyType, MgtKey, ItemCode, StmtMgtKey)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:

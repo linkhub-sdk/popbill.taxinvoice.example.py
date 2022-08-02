@@ -53,11 +53,8 @@ try:
     # 발행(Issue API)을 호출할 수 있습니다.
     ForceIssue = False
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     result = taxinvoiceService.issue(CorpNum, MgtKeyType, MgtKey, Memo,
-                                     EmailSubject, ForceIssue, UserID)
+                                     EmailSubject, ForceIssue)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
     print("국세청승인번호 : %s" % (result.ntsConfirmNum))

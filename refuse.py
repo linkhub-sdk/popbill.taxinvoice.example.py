@@ -36,10 +36,7 @@ try:
     # 메모
     Memo = "역발행 거부 메모"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = taxinvoiceService.refuse(CorpNum, MgtKeyType, MgtKey, Memo, UserID)
+    result = taxinvoiceService.refuse(CorpNum, MgtKeyType, MgtKey, Memo)
     print("처리결과 : [%d] %s" % (result.code,result.message))
 
 except PopbillException as PE:

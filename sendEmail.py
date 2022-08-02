@@ -38,10 +38,7 @@ try:
     # 실제 거래처의 메일주소가 기재되지 않도록 주의
     ReceiverMail = ""
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = taxinvoiceService.sendEmail(CorpNum, MgtKeyType, MgtKey, ReceiverMail, UserID)
+    result = taxinvoiceService.sendEmail(CorpNum, MgtKeyType, MgtKey, ReceiverMail)
 
     print("처리결과 : [%d] %s" % (result.code,result.message))
 except PopbillException as PE:

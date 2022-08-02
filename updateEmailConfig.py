@@ -62,10 +62,7 @@ try:
     # 전송 여부 (True = 전송, False = 미전송)
     SendYN = True
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = taxinvoiceService.updateEmailConfig(CorpNum, EmailType, SendYN, UserID)
+    result = taxinvoiceService.updateEmailConfig(CorpNum, EmailType, SendYN)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:

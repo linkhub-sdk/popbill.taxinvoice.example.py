@@ -30,10 +30,7 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    response = taxinvoiceService.getChargeInfo(CorpNum, UserID)
+    response = taxinvoiceService.getChargeInfo(CorpNum)
 
     tmp = "unitCost (발행단가) : " + response.unitCost + "\n"
     tmp += "chargeMethod (과금유형) : " + response.chargeMethod + "\n"

@@ -43,10 +43,7 @@ try:
     # 수신팩스번호
     Receiver = ""
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = taxinvoiceService.sendFax(CorpNum, MgtKeyType, MgtKey, Sender, Receiver, UserID)
+    result = taxinvoiceService.sendFax(CorpNum, MgtKeyType, MgtKey, Sender, Receiver)
     print("처리결과 : [%d] %s" % (result.code, result.message))
 
 except PopbillException as PE:

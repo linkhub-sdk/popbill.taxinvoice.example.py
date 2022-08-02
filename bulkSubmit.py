@@ -43,9 +43,6 @@ try:
     #   true로 선언하여 발행(Issue API)를 호출하시면 됩니다.
     forceIssue = False
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     #세금계산서 객체정보 리스트
     taxinvoicelist = []
     for i in range(0,20):
@@ -236,7 +233,7 @@ try:
             )
         )
 
-    bulkResponse = taxinvoiceService.bulkSubmit(CorpNum, submitID, taxinvoicelist, forceIssue, UserID)
+    bulkResponse = taxinvoiceService.bulkSubmit(CorpNum, submitID, taxinvoicelist, forceIssue)
 
     print("처리결과 : [%d] %s" % (bulkResponse.code, bulkResponse.message))
     print("접수번호 : %s" % (bulkResponse.receiptID))

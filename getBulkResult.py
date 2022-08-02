@@ -35,10 +35,7 @@ try:
     #최대 36자리 영문, 숫자, '-' 조합으로 구성
     submitID = 'PYTHON-BULK'
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    bulkTaxinvoiceResult = taxinvoiceService.getBulkResult(CorpNum, submitID, UserID)
+    bulkTaxinvoiceResult = taxinvoiceService.getBulkResult(CorpNum, submitID)
 
     print("code (요청에 대한 응답 상태코드) : %s " % bulkTaxinvoiceResult.code)
     print("message (요청에 대한 응답 메시지) : %s " % bulkTaxinvoiceResult.message)

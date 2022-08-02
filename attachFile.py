@@ -39,10 +39,7 @@ try:
     # 파일경로
     FilePath = "test.jpeg"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = taxinvoiceService.attachFile(CorpNum, MgtKeyType, MgtKey, FilePath, UserID)
+    result = taxinvoiceService.attachFile(CorpNum, MgtKeyType, MgtKey, FilePath)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:

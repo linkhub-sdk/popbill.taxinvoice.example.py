@@ -41,10 +41,7 @@ try:
     # 메모
     Memo = "처리시 메모"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = taxinvoiceService.cancelRequest(CorpNum, MgtKeyType, MgtKey, Memo, UserID)
+    result = taxinvoiceService.cancelRequest(CorpNum, MgtKeyType, MgtKey, Memo)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:

@@ -47,11 +47,7 @@ try:
     # 메시지 내용, 최대 90byte 초과시 초과된 내용은 삭제되어 전송
     Contents = "발신문자 내용"
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    result = taxinvoiceService.sendSMS(CorpNum, MgtKeyType, MgtKey, Sender, Receiver,
-                                       Contents, UserID)
+    result = taxinvoiceService.sendSMS(CorpNum, MgtKeyType, MgtKey, Sender, Receiver, Contents)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 
