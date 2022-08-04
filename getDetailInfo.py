@@ -20,7 +20,7 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-1건의 세금계산서 상세항목을 확인합니다.
+세금계산서 1건의 상세항목을 확인합니다.
 - https://docs.popbill.com/taxinvoice/python/api#GetDetailInfo
 '''
 

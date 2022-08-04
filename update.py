@@ -281,7 +281,9 @@ try:
         )
     )
 
-    # 거래명세서 동시작성여부
+    # 거래명세서 동시작성여부 (true / false 중 택 1)
+    # └ true = 사용 , false = 미사용
+    # - 미입력 시 기본값 false 처리
     writeSpecification = False
 
     result = taxinvoiceService.update(CorpNum, MgtKeyType, MgtKey, taxinvoice, writeSpecification)

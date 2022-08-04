@@ -20,7 +20,12 @@ taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-1건의 세금계산서를 즉시발행 처리합니다.
+작성된 세금계산서 데이터를 팝빌에 저장과 동시에 발행(전자서명)하여 "발행완료" 상태로 처리합니다.
+- 세금계산서 국세청 전송 정책 [https://docs.popbill.com/taxinvoice/ntsSendPolicy?lang=python]
+- "발행완료"된 전자세금계산서는 국세청 전송 이전에 발행취소(CancelIssue API) 함수로 국세청 신고 대상에서 제외할 수 있습니다.
+- 임시저장(Register API) 함수와 발행(Issue API) 함수를 한 번의 프로세스로 처리합니다.
+- 세금계산서 발행을 위해서 공급자의 인증서가 팝빌 인증서버에 사전등록 되어야 합니다.
+  └ 위수탁발행의 경우, 수탁자의 인증서 등록이 필요합니다.
 - https://docs.popbill.com/taxinvoice/python/api#RegistIssue
 '''
 
@@ -40,7 +45,9 @@ try:
     #   true로 선언하여 발행(Issue API)를 호출하시면 됩니다.
     forceIssue = False
 
-    # 거래명세서 동시작성여부
+    # 거래명세서 동시작성여부 (true / false 중 택 1)
+    # └ true = 사용 , false = 미사용
+    # - 미입력 시 기본값 false 처리
     writeSpecification = False
 
     # 거래명세서 동시작성시, 명세서 문서번호
@@ -110,9 +117,10 @@ try:
         # 공급자 담당자 휴대폰 번호
         invoicerHP='',
 
-        # 발행시 알림문자 전송여부 (정발행에서만 사용가능)
-        # - 공급받는자 주)담당자 휴대폰번호(invoiceeHP1)로 전송
-        # - 전송시 포인트가 차감되며 전송실패하는 경우 포인트 환불처리
+        # 발행 안내 문자 전송여부 (true / false 중 택 1)
+        # └ true = 전송 , false = 미전송
+        # └ 공급받는자 (주)담당자 휴대폰번호 {invoiceeHP1} 값으로 문자 전송
+        # - 전송 시 포인트 차감되며, 전송실패시 환불처리
         invoicerSMSSendYN=False,
 
         ######################################################################
