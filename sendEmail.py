@@ -18,7 +18,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 발행 안내메일을 재전송합니다.
-- https://docs.popbill.com/taxinvoice/python/api#SendEmail
+- https://developers.popbill.com/reference/taxinvoice/python/api/etc#SendEmail
 '''
 
 try:

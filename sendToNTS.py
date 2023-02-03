@@ -19,7 +19,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 '''
 "발행완료" 상태의 전자세금계산서를 국세청에 즉시 전송하며, 함수 호출 후 최대 30분 이내에 전송 처리가 완료됩니다.
 - 국세청 즉시전송을 호출하지 않은 세금계산서는 발행일 기준 다음 영업일 오후 3시에 팝빌 시스템에서 일괄적으로 국세청으로 전송합니다.
-- https://docs.popbill.com/taxinvoice/python/api#SendToNTS
+- https://developers.popbill.com/reference/taxinvoice/python/api/issue#SendToNTS
 '''
 
 try:

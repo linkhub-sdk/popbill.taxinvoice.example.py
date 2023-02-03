@@ -21,7 +21,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 "임시저장" 상태의 세금계산서에 1개의 파일을 첨부합니다. (최대 5개)
-- https://docs.popbill.com/taxinvoice/python/api#AttachFile
+- https://developers.popbill.com/reference/taxinvoice/python/api/etc#AttachFile
 '''
 
 try:

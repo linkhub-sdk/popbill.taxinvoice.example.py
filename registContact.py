@@ -21,7 +21,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 연동회원 사업자번호에 담당자(팝빌 로그인 계정)를 추가합니다.
-- https://docs.popbill.com/taxinvoice/python/api#RegistContact
+- https://developers.popbill.com/reference/taxinvoice/python/api/member#RegistContact
 '''
 
 try:

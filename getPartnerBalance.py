@@ -21,7 +21,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 파트너의 잔여포인트를 확인합니다.
-- https://docs.popbill.com/taxinvoice/python/api#GetPartnerBalance
+- https://developers.popbill.com/reference/taxinvoice/python/api/point#GetPartnerBalance
 '''
 
 try:

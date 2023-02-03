@@ -25,7 +25,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 - 발행 요청된 세금계산서는 "(역)발행대기" 상태이며, 공급자가 팝빌 사이트 또는 함수를 호출하여 발행한 경우에만 국세청으로 전송됩니다.
 - 공급자는 팝빌 사이트의 "매출 발행 대기함"에서 발행대기 상태의 역발행 세금계산서를 확인할 수 있습니다.
 - 임시저장(Register API) 함수와 역발행 요청(Request API) 함수를 한 번의 프로세스로 처리합니다.
-- https://docs.popbill.com/taxinvoice/python/api#RegistRequest
+- https://developers.popbill.com/reference/taxinvoice/python/api/issue#RegistRequest
 '''
 
 try:
@@ -207,7 +207,7 @@ try:
         ######################################################################
         #                 수정세금계산서 정보 (수정세금계산서 발행시에만 기재)
         # - 수정세금계산서 관련 정보는 연동매뉴얼 또는 개발가이드 링크 참조
-        # - [참고] 수정세금계산서 작성방법 안내 - https://docs.popbill.com/taxinvoice/modify?lang=python
+        # - [참고] 수정세금계산서 작성방법 안내 - https://developers.popbill.com/reference/taxinvoice/$1/introduction/modified-taxinvoice
         ######################################################################
 
         # 수정세금계산서 정보 수정사유별로 1~6중 선택기재

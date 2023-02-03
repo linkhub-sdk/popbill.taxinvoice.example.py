@@ -21,7 +21,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 팝빌에 등록된 공인인증서의 유효성을 확인합니다.
-- https://docs.popbill.com/taxinvoice/python/api#CheckCertValidation
+- https://developers.popbill.com/reference/taxinvoice/python/api/cert#CheckCertValidation
 '''
 
 try:

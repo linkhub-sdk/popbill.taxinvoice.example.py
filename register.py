@@ -26,7 +26,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 - 역발행 시 임시저장(Register)과 역발행요청(Request)을 한번의 호출로 처리하는 즉시요청(RegistRequest API) 프로세스 연동을 권장합니다.
 - 세금계산서 파일첨부 기능을 구현하는 경우, 임시저장(Register API) -> 파일첨부(AttachFile API) -> 발행(Issue API) 함수를 차례로 호출합니다.
 - 임시저장된 세금계산서는 팝빌 사이트 '임시문서함'에서 확인 가능합니다.
-- https://docs.popbill.com/taxinvoice/python/api#Register
+- https://developers.popbill.com/reference/taxinvoice/python/api/issue#Register
 '''
 
 try:
@@ -211,7 +211,7 @@ try:
         ######################################################################
         #                 수정세금계산서 정보 (수정세금계산서 발행시에만 기재)
         # - 수정세금계산서 관련 정보는 연동매뉴얼 또는 개발가이드 링크 참조
-        # - [참고] 수정세금계산서 작성방법 안내 - https://docs.popbill.com/taxinvoice/modify?lang=python
+        # - [참고] 수정세금계산서 작성방법 안내 - https://developers.popbill.com/reference/taxinvoice/$1/introduction/modified-taxinvoice
         ######################################################################
 
         # 수정세금계산서 정보

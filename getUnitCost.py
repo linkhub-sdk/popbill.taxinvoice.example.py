@@ -21,7 +21,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 전자세금계산서 발행단가를 확인합니다.
-- https://docs.popbill.com/taxinvoice/python/api#GetUnitCost
+- https://developers.popbill.com/reference/taxinvoice/python/api/point#GetUnitCost
 '''
 
 try:

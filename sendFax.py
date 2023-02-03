@@ -22,7 +22,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 '''
 세금계산서를 팩스로 전송하는 함수로, 팝빌 사이트 [문자·팩스] > [팩스] > [전송내역] 메뉴에서 전송결과를 확인 할 수 있습니다.
 - 함수 호출시 포인트가 과금됩니다.
-- https://docs.popbill.com/taxinvoice/python/api#SendFAX
+- https://developers.popbill.com/reference/taxinvoice/python/api/etc#SendFAX
 '''
 
 try:

@@ -22,7 +22,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 '''
 "임시저장" 상태의 세금계산서에 첨부된 1개의 파일을 삭제합니다.
 - 파일을 식별하는 파일아이디는 첨부파일 목록(GetFiles API) 의 응답항목 중 파일아이디(AttachedFile) 값을 통해 확인할 수 있습니다.
-- https://docs.popbill.com/taxinvoice/python/api#DeleteFile
+- https://developers.popbill.com/reference/taxinvoice/python/api/etc#DeleteFile
 '''
 
 try:

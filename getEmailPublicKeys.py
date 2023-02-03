@@ -21,7 +21,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 전자세금계산서 유통사업자의 메일 목록을 확인합니다.
-- https://docs.popbill.com/taxinvoice/python/api#GetEmailPublicKeys
+- https://developers.popbill.com/reference/taxinvoice/python/api/etc#GetEmailPublicKeys
 '''
 
 try:

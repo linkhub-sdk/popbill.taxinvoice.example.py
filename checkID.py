@@ -21,7 +21,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 사용하고자 하는 아이디의 중복여부를 확인합니다.
-- https://docs.popbill.com/taxinvoice/python/api#CheckID
+- https://developers.popbill.com/reference/taxinvoice/python/api/member#CheckID
 '''
 
 try:

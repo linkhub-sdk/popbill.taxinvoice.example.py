@@ -21,7 +21,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 연동회원의 회사정보를 확인합니다.
-- https://docs.popbill.com/taxinvoice/python/api#GetCorpInfo
+- https://developers.popbill.com/reference/taxinvoice/python/api/member#GetCorpInfo
 '''
 
 try:

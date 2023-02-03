@@ -23,7 +23,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 최대 100건의 세금계산서 발행을 한번의 요청으로 접수합니다.
 - 세금계산서 발행을 위해서 공급자의 인증서가 팝빌 인증서버에 사전등록 되어야 합니다.
     └ 위수탁발행의 경우, 수탁자의 인증서 등록이 필요합니다.
-- https://docs.popbill.com/taxinvoice/python/api#BulkSubmit
+- https://developers.popbill.com/reference/taxinvoice/python/api/issue#BulkSubmit
 '''
 
 try:

@@ -21,7 +21,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 전자세금계산서 관련 메일전송 항목에 대한 전송여부를 수정합니다.
-- https://docs.popbill.com/taxinvoice/python/api#UpdateEmailConfig
+- https://developers.popbill.com/reference/taxinvoice/python/api/etc#UpdateEmailConfig
 
 메일전송유형
 [정발행]

@@ -21,7 +21,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 세금계산서 관련 메일 항목에 대한 발송설정을 확인합니다.
-- https://docs.popbill.com/taxinvoice/python/api#ListEmailConfig
+- https://developers.popbill.com/reference/taxinvoice/python/api/etc#ListEmailConfig
 '''
 
 try:
