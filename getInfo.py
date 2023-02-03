@@ -22,7 +22,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 '''
 세금계산서 1건의 상태 및 요약정보를 확인합니다.
 - 리턴값 'TaxinvoiceInfo'의 변수 'stateCode'를 통해 세금계산서의 상태코드를 확인합니다.
-- 세금계산서 상태코드 [https://developers.popbill.com/reference/taxinvoice/$2/response-code#state-code]
+- 세금계산서 상태코드 [https://developers.popbill.com/reference/taxinvoice/python/response-code#state-code]
 - https://developers.popbill.com/reference/taxinvoice/python/api/info#GetInfo
 '''
 

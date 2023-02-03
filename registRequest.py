@@ -207,7 +207,7 @@ try:
         ######################################################################
         #                 수정세금계산서 정보 (수정세금계산서 발행시에만 기재)
         # - 수정세금계산서 관련 정보는 연동매뉴얼 또는 개발가이드 링크 참조
-        # - [참고] 수정세금계산서 작성방법 안내 - https://developers.popbill.com/reference/taxinvoice/$1/introduction/modified-taxinvoice
+        # - [참고] 수정세금계산서 작성방법 안내 - https://developers.popbill.com/guide/taxinvoice/python/introduction/modified-taxinvoice
         ######################################################################
 
         # 수정세금계산서 정보 수정사유별로 1~6중 선택기재

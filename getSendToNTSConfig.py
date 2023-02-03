@@ -21,7 +21,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 연동회원의 국세청 전송 옵션 설정 상태를 확인합니다.
-- 세금계산서 국세청 전송 정책 [https://developers.popbill.com/guide/taxinvoice/$2/introduction/policy-of-send-to-nts]
+- 세금계산서 국세청 전송 정책 [https://developers.popbill.com/guide/taxinvoice/python/introduction/policy-of-send-to-nts]
 - 국세청 전송 옵션 설정은 팝빌 사이트 [전자세금계산서] > [환경설정] > [세금계산서 관리] 메뉴에서 설정할 수 있으며, API로 설정은 불가능 합니다.
 - https://developers.popbill.com/reference/taxinvoice/python/api/etc#GetSendToNTSConfig
 '''
