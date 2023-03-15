@@ -35,7 +35,7 @@ try:
     UserID = testValue.testUserID
 
     # TBOX = 임시 문서함, SWBOX = 매출 발행 대기함, PWBOX = 매입 발행 대기함
-    # SBOX = 매출 문서함, PBOX = 매입 문서함, WRITE = 매출 문서작성
+    # SBOX = 매출 문서함, PBOX = 매입 문서함, WRITE = 정발행 작성
     TOGO = "WRITE"
 
     url = taxinvoiceService.getURL(CorpNum, UserID, TOGO)
