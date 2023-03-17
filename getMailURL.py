@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 # code for console Encoding difference. Dont' mind on it
-import sys
 import imp
+import sys
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding("UTF8")
+except Exception as E:
+    pass
 
 import testValue
-
-from popbill import TaxinvoiceService, PopbillException
+from popbill import PopbillException, TaxinvoiceService
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
@@ -16,11 +18,11 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 전자세금계산서 안내메일의 상세보기 링크 URL을 반환합니다.
 - 함수 호출로 반환 받은 URL에는 유효시간이 없습니다.
 - https://developers.popbill.com/reference/taxinvoice/python/api/view#GetMailURL
-'''
+"""
 
 try:
     print("=" * 15 + " 세금계산서 메일링크 URL 확인 " + "=" * 15)
@@ -41,4 +43,4 @@ try:
     print("URL: %s" % url)
 
 except PopbillException as PE:
-    print("Popbill Exception : [%d] %s" % (PE.code , PE.message))
+    print("Popbill Exception : [%d] %s" % (PE.code, PE.message))

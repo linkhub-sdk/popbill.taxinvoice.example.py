@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 # code for console Encoding difference. Dont' mind on it
-import sys
 import imp
+import sys
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
 import testValue
-
-from popbill import TaxinvoiceService, PopbillException
+from popbill import PopbillException, TaxinvoiceService
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
@@ -19,10 +18,10 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 팝빌 인증서버에 등록된 공동인증서의 정보를 확인합니다.
 - https://developers.popbill.com/reference/taxinvoice/python/api/cert#GetTaxCertInfo
-'''
+"""
 
 try:
     print("=" * 15 + " 인증서 정보 확인 " + "=" * 15)

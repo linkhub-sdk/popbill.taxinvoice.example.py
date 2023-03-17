@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 # code for console Encoding difference. Dont' mind on it
-import sys
 import imp
+import sys
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
 import testValue
-
-from popbill import TaxinvoiceService, PopbillException
+from popbill import PopbillException, TaxinvoiceService
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
@@ -19,12 +18,12 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 다수건의 세금계산서 상태 및 요약 정보를 확인합니다. (1회 호출 시 최대 1,000건 확인 가능)
 - 리턴값 'TaxinvoiceInfo'의 변수 'stateCode'를 통해 세금계산서의 상태코드를 확인합니다.
 - 세금계산서 상태코드 [https://developers.popbill.com/reference/taxinvoice/python/response-code#state-code]
 - https://developers.popbill.com/reference/taxinvoice/python/api/info#GetInfos
-'''
+"""
 
 try:
     print("=" * 15 + " 세금계산서 상태/요약 정보 확인 (대량) " + "=" * 15)
@@ -44,7 +43,6 @@ try:
     InfoList = taxinvoiceService.getInfos(CorpNum, MgtKeyType, MgtKeyList)
 
     for info in InfoList:
-
         print("\n======세금계산서 정보======>")
         print("itemKey (팝빌번호) : %s " % info.itemKey)
         print("taxType (과세형태) : %s " % info.taxType)

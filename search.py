@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 # code for console Encoding difference. Dont' mind on it
-import sys
 import imp
+import sys
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
 import testValue
-
-from popbill import TaxinvoiceService, PopbillException
+from popbill import PopbillException, TaxinvoiceService
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
@@ -19,10 +18,10 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 검색조건을 사용하여 세금계산서 목록을 조회합니다. (조회기간 단위 : 최대 6개월)
 - https://developers.popbill.com/reference/taxinvoice/python/api/info#Search
-'''
+"""
 
 try:
     print("=" * 15 + " 세금계산서 목록 조회 " + "=" * 15)
@@ -117,10 +116,30 @@ try:
     # - 미입력시 전체조회
     MgtKey = ""
 
-    response = taxinvoiceService.search(CorpNum, MgtKeyType, DType,
-                                        SDate, EDate, State, Type, TaxType, LateOnly, TaxRegIDYN,
-                                        TaxRegIDType, TaxRegID, Page, PerPage, Order, UserID,
-                                        QString, InterOPYN, IssueType, RegType, CloseDownState, MgtKey)
+    response = taxinvoiceService.search(
+        CorpNum,
+        MgtKeyType,
+        DType,
+        SDate,
+        EDate,
+        State,
+        Type,
+        TaxType,
+        LateOnly,
+        TaxRegIDYN,
+        TaxRegIDType,
+        TaxRegID,
+        Page,
+        PerPage,
+        Order,
+        UserID,
+        QString,
+        InterOPYN,
+        IssueType,
+        RegType,
+        CloseDownState,
+        MgtKey,
+    )
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)

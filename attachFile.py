@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 # code for console Encoding difference. Dont' mind on it
-import sys
 import imp
+import sys
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
 import testValue
-
-from popbill import TaxinvoiceService, PopbillException
+from popbill import PopbillException, TaxinvoiceService
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
@@ -19,10 +18,10 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 "임시저장" 상태의 세금계산서에 1개의 파일을 첨부합니다. (최대 5개)
 - https://developers.popbill.com/reference/taxinvoice/python/api/etc#AttachFile
-'''
+"""
 
 try:
     print("=" * 15 + " 세금계산서 파일첨부 " + "=" * 15)

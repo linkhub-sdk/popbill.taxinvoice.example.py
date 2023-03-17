@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 # code for console Encoding difference. Dont' mind on it
-import sys
 import imp
+import sys
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
 import testValue
-
-from popbill import TaxinvoiceService, PopbillException
+from popbill import PopbillException, TaxinvoiceService
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
@@ -19,7 +18,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 "임시저장" 또는 "(역)발행대기" 상태의 세금계산서를 발행(전자서명)하며, "발행완료" 상태로 처리합니다.
 - 세금계산서 국세청 전송정책 [https://developers.popbill.com/guide/taxinvoice/python/introduction/policy-of-send-to-nts]
 - "발행완료" 된 전자세금계산서는 국세청 전송 이전에 발행취소(CancelIssue API) 함수로 국세청 신고 대상에서 제외할 수 있습니다.
@@ -27,7 +26,7 @@ taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
     └ 위수탁발행의 경우, 수탁자의 인증서 등록이 필요합니다.
 - 세금계산서 발행 시 공급받는자에게 발행 메일이 발송됩니다.
 - https://developers.popbill.com/reference/taxinvoice/python/api/issue#Issue
-'''
+"""
 
 try:
     print("=" * 15 + " 세금계산서 발행 " + "=" * 15)
@@ -53,8 +52,9 @@ try:
     # 발행(Issue API)을 호출할 수 있습니다.
     ForceIssue = False
 
-    result = taxinvoiceService.issue(CorpNum, MgtKeyType, MgtKey, Memo,
-                                     EmailSubject, ForceIssue)
+    result = taxinvoiceService.issue(
+        CorpNum, MgtKeyType, MgtKey, Memo, EmailSubject, ForceIssue
+    )
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
     print("국세청승인번호 : %s" % (result.ntsConfirmNum))

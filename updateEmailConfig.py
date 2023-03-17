@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 # code for console Encoding difference. Dont' mind on it
-import sys
 import imp
+import sys
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
 import testValue
-
-from popbill import TaxinvoiceService, PopbillException
+from popbill import PopbillException, TaxinvoiceService
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
@@ -19,7 +18,7 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 전자세금계산서 관련 메일전송 항목에 대한 전송여부를 수정합니다.
 - https://developers.popbill.com/reference/taxinvoice/python/api/etc#UpdateEmailConfig
 
@@ -48,7 +47,7 @@ TAX_NTSFAIL_INVOICER : 전자세금계산서 국세청 전송실패를 안내하
 
 [정기발송]
 ETC_CERT_EXPIRATION : 팝빌에서 이용중인 공인인증서의 갱신을 안내하는 메일입니다.
-'''
+"""
 
 try:
     print("=" * 15 + " 세금계산서 메일전송여부 수정 " + "=" * 15)
@@ -57,7 +56,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 메일 전송 유형
-    EmailType = 'TAX_ISSUE'
+    EmailType = "TAX_ISSUE"
 
     # 전송 여부 (True = 전송, False = 미전송)
     SendYN = True

@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 # code for console Encoding difference. Dont' mind on it
-import sys
 import imp
+import sys
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
 import testValue
-
-from popbill import TaxinvoiceService, PopbillException
+from popbill import PopbillException, TaxinvoiceService
 
 taxinvoiceService = TaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 taxinvoiceService.IsTest = testValue.IsTest
@@ -19,11 +18,11 @@ taxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 taxinvoiceService.UseStaticIP = testValue.UseStaticIP
 taxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 접수시 기재한 SubmitID를 사용하여 세금계산서 접수결과를 확인합니다.
 - 개별 세금계산서 처리상태는 접수상태(txState)가 완료(2) 시 반환됩니다.
 - https://developers.popbill.com/reference/taxinvoice/python/api/issue#GetBulkResult
-'''
+"""
 
 try:
     print("=" * 15 + " 세금계산서 초대량 접수결과 확인 " + "=" * 15)
@@ -31,9 +30,9 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    #제출아이디
-    #최대 36자리 영문, 숫자, '-' 조합으로 구성
-    submitID = 'PYTHON-BULK'
+    # 제출아이디
+    # 최대 36자리 영문, 숫자, '-' 조합으로 구성
+    submitID = "PYTHON-BULK"
 
     bulkTaxinvoiceResult = taxinvoiceService.getBulkResult(CorpNum, submitID)
 
@@ -52,8 +51,12 @@ try:
 
     print("=" * 15 + " issueResult (발행결과) " + "=" * 15)
     for bulkTaxinvoiceIssueResult in bulkTaxinvoiceResult.issueResult:
-        print("invoicerMgtKey (공급자 문서번호) : %s " % bulkTaxinvoiceIssueResult.invoicerMgtKey)
-        print("invoicerMgtKey (수탁자 문서번호) : %s " % bulkTaxinvoiceIssueResult.invoicerMgtKey)
+        print(
+            "invoicerMgtKey (공급자 문서번호) : %s " % bulkTaxinvoiceIssueResult.invoicerMgtKey
+        )
+        print(
+            "invoicerMgtKey (수탁자 문서번호) : %s " % bulkTaxinvoiceIssueResult.invoicerMgtKey
+        )
         print("code (응답코드) : %s " % bulkTaxinvoiceIssueResult.code)
         print("message (응답메시지) : %s " % bulkTaxinvoiceIssueResult.message)
         print("ntsconfirmNum (국세청승인번호) : %s " % bulkTaxinvoiceIssueResult.ntsconfirmNum)
