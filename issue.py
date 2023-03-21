@@ -44,7 +44,7 @@ try:
     Memo = "발행 메모"
 
     # 발행 안내메일 제목, 미기재시 기본양식으로 전송
-    EmailSubject = None
+    EmailSubject = ""
 
     # 지연발행 강제여부, 기본값 - False
     # 발행마감일이 지난 세금계산서를 발행하는 경우, 가산세가 부과될 수 있습니다.
@@ -52,8 +52,11 @@ try:
     # 발행(Issue API)을 호출할 수 있습니다.
     ForceIssue = False
 
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
     result = taxinvoiceService.issue(
-        CorpNum, MgtKeyType, MgtKey, Memo, EmailSubject, ForceIssue
+        CorpNum, MgtKeyType, MgtKey, Memo, EmailSubject, ForceIssue, UserID
     )
 
     print("처리결과 : [%d] %s" % (result.code, result.message))

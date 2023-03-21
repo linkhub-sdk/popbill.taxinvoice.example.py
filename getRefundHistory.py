@@ -38,9 +38,7 @@ try:
     # 팝빌회원 팝빌 아이디
     UserID = testValue.testUserID
 
-    refundHistoryResult = taxinvoiceService.getRefundHistory(
-        CorpNum, Page, PerPage, UserID
-    )
+    refundHistoryResult = taxinvoiceService.getRefundHistory(CorpNum, Page, PerPage, UserID)
 
     print(" code (요청에 대한 응답 상태 코드) : %s" % refundHistoryResult.code)
     print(" total (총 검색결과 건수) : %s" % refundHistoryResult.total)

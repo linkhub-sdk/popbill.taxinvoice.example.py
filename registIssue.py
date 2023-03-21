@@ -64,6 +64,9 @@ try:
     # 발행안내 메일 제목, 미기재시 기본양식으로 전송
     emailSubject = ""
 
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
     # 세금계산서 정보
     taxinvoice = Taxinvoice(
         # 작성일자, 날짜형식(yyyyMMdd)
@@ -249,15 +252,7 @@ try:
         )
     )
 
-    result = taxinvoiceService.registIssue(
-        CorpNum,
-        taxinvoice,
-        writeSpecification,
-        forceIssue,
-        dealInvoiceMgtKey,
-        memo,
-        emailSubject,
-    )
+    result = taxinvoiceService.registIssue(CorpNum,taxinvoice,writeSpecification,forceIssue,dealInvoiceMgtKey,memo,emailSubject,UserID)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
     print("국세청승인번호 : %s" % (result.ntsConfirmNum))
