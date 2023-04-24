@@ -11,7 +11,6 @@ except Exception as E:
 
 import testValue
 from popbill import (
-    Contact,
     PopbillException,
     Taxinvoice,
     TaxinvoiceDetail,
