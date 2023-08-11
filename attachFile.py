@@ -38,7 +38,10 @@ try:
     # 파일경로
     FilePath = "test.jpeg"
 
-    result = taxinvoiceService.attachFile(CorpNum, MgtKeyType, MgtKey, FilePath)
+    # 첨부파일명
+    DisplayName = "Display.jpeg"
+
+    result = taxinvoiceService.attachFile(CorpNum, MgtKeyType, MgtKey, FilePath, None, DisplayName)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:
