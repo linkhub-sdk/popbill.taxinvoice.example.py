@@ -32,11 +32,6 @@ try:
     EmailConfig = taxinvoiceService.listEmailConfig(CorpNum)
 
     for info in EmailConfig:
-        if info.emailType == "TAX_ISSUE":
-            print(
-                "[정발행] %s(공급받는자에게 전자세금계산서 발행 메일 전송 여부) : %s"
-                % (info.emailType, info.sendYN)
-            )
         if info.emailType == "TAX_ISSUE_INVOICER":
             print(
                 "[정발행] %s(공급자에게 전자세금계산서 발행 메일 전송 여부) : %s"
@@ -67,6 +62,11 @@ try:
                 "[역발행] %s(공급받는자에게 세금계산서 거부 메일 전송 여부) : %s"
                 % (info.emailType, info.sendYN)
             )
+        if info.emailType == "TAX_REVERSE_ISSUE":
+            print(
+                "[역발행] %s(공급받는자에게 세금계산서 발행 메일 전송 여부) : %s"
+                % (info.emailType, info.sendYN)
+            )    
         if info.emailType == "TAX_TRUST_ISSUE":
             print(
                 "[위수탁발행] %s(공급받는자에게 전자세금계산서 발행 메일 전송 여부) : %s"
