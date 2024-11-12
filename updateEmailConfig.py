@@ -42,7 +42,7 @@ TAX_TRUST_CANCEL_ISSUE : 공공급받는자에게 전자세금계산서 발행�
 TAX_TRUST_CANCEL_ISSUE_INVOICER : 공급자에게 전자세금계산서 발행취소 사실을 안내하는 메일
 
 [처리결과]
-TAX_CLOSEDOWN : 거래처의 휴폐업 여부를 확인하여 안내하는 메일
+TAX_CLOSEDOWN : 거래처의 사업자등록상태(휴폐업)를 확인하여 안내하는 메일
 TAX_NTSFAIL_INVOICER : 전자세금계산서 국세청 전송실패를 안내하는 메일
 
 [정기발송]

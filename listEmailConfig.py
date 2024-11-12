@@ -94,7 +94,7 @@ try:
             )
         if info.emailType == "TAX_CLOSEDOWN":
             print(
-                "[처리결과] %s(거래처의 휴폐업 여부 확인 메일 전송 여부) : %s"
+                "[처리결과] %s(거래처의 사업자등록상태(휴폐업) 확인 메일 전송 여부) : %s"
                 % (info.emailType, info.sendYN)
             )
         if info.emailType == "TAX_NTSFAIL_INVOICER":
